@@ -7,7 +7,6 @@ import * as styles from "./index.module.scss"
 interface Props {}
 
 const Home: React.FC<Props> = props => {
-  console.log(styles)
   return (
     <Layout>
       <HeroBlade />

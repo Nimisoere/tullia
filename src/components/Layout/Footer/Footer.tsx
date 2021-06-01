@@ -17,8 +17,8 @@ const Footer: React.FC<Props> = props => {
           />
           <p>Lorem ipsum dolor blah….</p>
         </div>
-        <div className="flex items-center justify-between">
-          <nav className="flex items-center">
+        <div className="flex flex-wrap items-center justify-between">
+          <nav className="flex flex-wrap items-center">
             <Link className="p-4" to="/faq">
               FAQ
             </Link>
@@ -32,8 +32,8 @@ const Footer: React.FC<Props> = props => {
               Contact Us
             </Link>
           </nav>
-          <div className="flex items-center">
-            <nav className="flex items-center">
+          <div className="flex flex-wrap items-center">
+            <nav className="flex flex-wrap items-center">
               <Link className="p-4" to="/facebook" target="_blank">
                 <FaFacebook />
               </Link>

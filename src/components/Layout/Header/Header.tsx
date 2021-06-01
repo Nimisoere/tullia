@@ -11,7 +11,7 @@ const Header = (props: Props) => {
         <div className="flex items-stretch justify-center">
           <StaticImage
             src="../../images/logo.png"
-            alt="Tullia"
+            alt="Tulia"
             placeholder="blurred"
           />
         </div>

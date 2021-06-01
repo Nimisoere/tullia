@@ -12,7 +12,7 @@ const Footer: React.FC<Props> = props => {
         <div className="mb-10 flex justify-center">
           <StaticImage
             src="../../images/logo.png"
-            alt="Tullia"
+            alt="Tulia"
             placeholder="blurred"
           />
           <p>Lorem ipsum dolor blah….</p>
@@ -48,7 +48,7 @@ const Footer: React.FC<Props> = props => {
               </Link>
             </nav>
             <span className="p-4">
-              &copy; {new Date().getFullYear()}. Tullia. All rights reserved
+              &copy; {new Date().getFullYear()}. Tulia. All rights reserved
             </span>
           </div>
         </div>

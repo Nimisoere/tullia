@@ -11,7 +11,7 @@ const Header = (props: Props) => {
   return (
     <div className="h-auto sm:h-16 sticky top-0 w-full flex items-stretch text-white bg-primary">
       <div className="container items-stretch flex flex-wrap relative justify-between mx-auto">
-        <div className="flex flex-wrap items-center justify-center">
+        <Link to="/" className="flex flex-wrap items-center justify-center">
           <StaticImage
             src="../../../images/logo.png"
             alt="Tulia"
@@ -19,7 +19,7 @@ const Header = (props: Props) => {
             height={40}
             placeholder="blurred"
           />
-        </div>
+        </Link>
         <button
           onClick={() => {
             setShowMenu(!showMenu)

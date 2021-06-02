@@ -7,7 +7,10 @@ interface Props {}
 const Contact: React.FC<Props> = props => {
   return (
     <Layout>
-      <PageHeader title="Get in touch" description="" />
+      <PageHeader
+        title="Privacy Policy"
+        description="You data is safe with us"
+      />
     </Layout>
   )
 }

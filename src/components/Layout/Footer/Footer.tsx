@@ -30,27 +30,31 @@ const Footer: React.FC<Props> = props => {
             <Link className="p-4" to="/privacy-policy">
               Privacy policy
             </Link>
-            <Link className="p-4" to="/privacy-policy">
+            <Link className="p-4" to="/contact">
               Contact Us
             </Link>
           </nav>
           <div className="flex flex-wrap items-center">
             <nav className="flex flex-wrap items-center">
-              <Link className="p-4" to="/facebook" target="_blank">
+              <Link className="p-4" to="https://facebook.com" target="_blank">
                 <FaFacebook />
               </Link>
-              <Link className="p-4" to="/twitter">
+              <Link className="p-4" to="https://twitter.com">
                 <FaTwitter />
               </Link>
-              <Link className="p-4" to="/instragram">
+              <Link className="p-4" to="https://instragram.com">
                 <FaInstagram />
               </Link>
-              <Link className="p-4" to="/linkedin">
+              <Link className="p-4" to="https://linkedin.com">
                 <FaLinkedin />
               </Link>
             </nav>
             <span className="p-4">
-              &copy; {new Date().getFullYear()}. Tulia. All rights reserved
+              &copy; {new Date().getFullYear()}{" "}
+              <Link to="/" className="underline">
+                Tulia
+              </Link>
+              . All rights reserved
             </span>
           </div>
         </div>

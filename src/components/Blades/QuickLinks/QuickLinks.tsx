@@ -5,7 +5,7 @@ interface Props {}
 
 const QuickLinks = (props: Props) => {
   return (
-    <nav className="flex flex-col max-w-sm">
+    <nav className="flex flex-col max-w-sm mb-8">
       <h4 className="font-medium mb-4">Quick Links</h4>
       <Link
         activeClassName="text-secondary"

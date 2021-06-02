@@ -15,7 +15,7 @@ const ImageText: React.FC<Props> = ({ reverse, backgroundColor }) => {
         } flex flex-wrap mx-auto`}
       >
         <div className="w-full sm:w-1/2 flex items-center justify-center">
-          <div className="max-w-lg mx-auto mb-10">
+          <div className="max-w-lg mx-auto px-8 mb-10">
             <StaticImage
               src="../../../images/wine-taste.jpeg"
               alt="Tulia"

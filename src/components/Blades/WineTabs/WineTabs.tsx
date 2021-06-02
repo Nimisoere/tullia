@@ -11,7 +11,7 @@ const WineTabs: React.FC<Props> = props => {
         <div className="container flex justify-center mx-auto">
           <nav className="flex flex-wrap w-full">
             <button
-              className="p-4 font-light text-lg sm:text-2xl w-full sm:w-1/5 flex sm:flex-col items-center  border-b-4 border-secondary"
+              className="p-4 hover:bg-gray-200 font-light text-lg w-full sm:w-1/5 flex sm:flex-col items-center  border-b-4 border-secondary"
               type="button"
             >
               <StaticImage
@@ -25,7 +25,7 @@ const WineTabs: React.FC<Props> = props => {
               <span className="ml-4">Rosé Sparkling Wine</span>
             </button>
             <button
-              className="p-4 font-thin text-lg sm:text-2xl w-full sm:w-1/5 flex sm:flex-col items-center  border-b-4 border-primary"
+              className="p-4 font-thin hover:bg-gray-200 text-lg w-full sm:w-1/5 flex sm:flex-col items-center  border-b-4 border-primary"
               type="button"
             >
               <StaticImage
@@ -39,7 +39,7 @@ const WineTabs: React.FC<Props> = props => {
               <span className="ml-4">Demi-Sec Sparkling Wine</span>
             </button>
             <button
-              className="p-4 w-full sm:w-1/5 font-thin text-lg sm:text-2xl flex sm:flex-col items-center  border-b-4 border-primary"
+              className="p-4 w-full hover:bg-gray-200  sm:w-1/5 font-thin text-lg flex sm:flex-col items-center  border-b-4 border-primary"
               type="button"
             >
               <StaticImage
@@ -53,7 +53,7 @@ const WineTabs: React.FC<Props> = props => {
               <span className="ml-4">Brut Sparkling Wine</span>
             </button>
             <button
-              className="p-4 w-full sm:w-1/5 font-thin text-lg sm:text-2xl flex sm:flex-col items-center  border-b-4 border-primary"
+              className="p-4 w-full hover:bg-gray-200 sm:w-1/5 font-thin text-lg flex sm:flex-col items-center  border-b-4 border-primary"
               type="button"
             >
               <StaticImage
@@ -67,7 +67,7 @@ const WineTabs: React.FC<Props> = props => {
               <span className="ml-4">White Wine</span>
             </button>
             <button
-              className="p-4 w-full sm:w-1/5 font-thin text-lg sm:text-2xl flex sm:flex-col items-center  border-b-4 border-primary"
+              className="p-4 w-full hover:bg-gray-200 sm:w-1/5 font-thin text-lg flex sm:flex-col items-center  border-b-4 border-primary"
               type="button"
             >
               <StaticImage
@@ -83,7 +83,7 @@ const WineTabs: React.FC<Props> = props => {
           </nav>
         </div>
       </div>
-      {/* <WineDisplay /> */}
+      <WineDisplay />
     </div>
   )
 }

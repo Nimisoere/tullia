@@ -11,10 +11,12 @@ const Header = (props: Props) => {
   return (
     <div className="h-auto sm:h-16 sticky top-0 w-full flex items-stretch text-white bg-primary">
       <div className="container items-stretch flex flex-wrap relative justify-between mx-auto">
-        <div className="flex flex-wrap items-stretch justify-center">
+        <div className="flex flex-wrap items-center justify-center">
           <StaticImage
-            src="../../images/logo.png"
+            src="../../../images/logo.png"
             alt="Tulia"
+            layout="fixed"
+            height={40}
             placeholder="blurred"
           />
         </div>
@@ -31,7 +33,8 @@ const Header = (props: Props) => {
         <nav
           className={`${
             showMenu ? "flex" : "hidden"
-          } sm:flex flex-col absolute top-12 bg-primary left-0 sm:relative sm:flex-row w-full sm:w-auto flex-wrap sm:flex-nowrap text-sm items-stretch justify-center`}
+          } sm:flex flex-col absolute top-12 sm:top-auto
+         bg-primary left-0 sm:relative sm:flex-row w-full sm:w-auto flex-wrap sm:flex-nowrap text-sm items-stretch justify-center`}
         >
           <Link
             activeClassName="text-secondary"

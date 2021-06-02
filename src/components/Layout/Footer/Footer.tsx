@@ -9,10 +9,12 @@ const Footer: React.FC<Props> = props => {
   return (
     <div className="w-full bg-primary text-gray-400">
       <div className="container mx-auto py-8">
-        <div className="mb-10 flex justify-center">
+        <div className="mb-10 flex flex-col items-center w-full justify-center">
           <StaticImage
-            src="../../images/logo.png"
+            src="../../../images/logo.png"
             alt="Tulia"
+            layout="fixed"
+            height={40}
             placeholder="blurred"
           />
           <p>Lorem ipsum dolor blah….</p>

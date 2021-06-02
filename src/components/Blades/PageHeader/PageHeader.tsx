@@ -15,7 +15,7 @@ const PageHeader: React.FC<Props> = ({ title, description }) => {
       <div className="container mx-auto text-white">
         <div className="max-w-md mx-auto text-center">
           <h1 className="font-thin text-secondary text-5xl mb-4">{title}</h1>
-          <p className="text-3xl font-thin mb-4">{description}</p>
+          <p className="text-3xl font-thin mb-4 font-serif">{description}</p>
         </div>
       </div>
     </div>

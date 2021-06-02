@@ -6,6 +6,9 @@ module.exports = {
       padding: '1.5rem',
     },
     extend: {
+      fontFamily: {
+        serif: ['Great Vibes', 'sans-serif'],
+      },
       colors: {
         primary: '#131313',
         secondary: '#C79B4D'

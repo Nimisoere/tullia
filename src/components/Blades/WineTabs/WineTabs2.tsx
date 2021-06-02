@@ -1,6 +1,6 @@
 import React from "react"
 import { StaticImage } from "gatsby-plugin-image"
-import WineDisplay from "./WineDisplay"
+import WineDisplay from "./WineDisplay2"
 import { Link } from "gatsby"
 
 interface Props {}

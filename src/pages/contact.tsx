@@ -11,8 +11,8 @@ const Contact: React.FC<Props> = props => {
       <PageHeader title="Get in touch" description="" />
       <div className="w-full py-10">
         <div className="container flex flex-wrap mx-auto">
-          <div className="w-full lg:w-1/3 sm:p-10">
-            <div className="bg-primary flex flex-wrap mb-10 sm:mb-0 items-stretch text-white">
+          <div className="w-full lg:w-1/3 sm:p-4">
+            <div className="bg-primary w-full flex flex-wrap mb-10 sm:mb-0 items-stretch text-white">
               <div
                 style={{
                   backgroundImage:
@@ -35,8 +35,8 @@ const Contact: React.FC<Props> = props => {
               </div>
             </div>
           </div>
-          <div className="w-full lg:w-1/3 sm:p-10">
-            <div className="bg-primary flex flex-wrap mb-10 sm:mb-0 items-stretch text-white">
+          <div className="w-full lg:w-1/3 sm:p-4">
+            <div className="bg-primary w-full flex flex-wrap mb-10 sm:mb-0 items-stretch text-white">
               <div
                 style={{
                   backgroundImage:
@@ -59,8 +59,8 @@ const Contact: React.FC<Props> = props => {
               </div>
             </div>
           </div>
-          <div className="w-full lg:w-1/3 sm:p-10">
-            <div className="bg-primary flex flex-wrap mb-10 sm:mb-0 items-stretch text-white">
+          <div className="w-full lg:w-1/3 sm:p-4">
+            <div className="bg-primary w-full flex flex-wrap mb-10 sm:mb-0 items-stretch text-white">
               <div
                 style={{
                   backgroundImage:

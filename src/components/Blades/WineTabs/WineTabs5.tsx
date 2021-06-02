@@ -1,6 +1,6 @@
 import React from "react"
 import { StaticImage } from "gatsby-plugin-image"
-import WineDisplay from "./WineDisplay"
+import WineDisplay from "./WineDisplay5"
 import { Link } from "gatsby"
 
 interface Props {}
@@ -8,7 +8,7 @@ interface Props {}
 const WineTabs: React.FC<Props> = props => {
   return (
     <div className="w-full">
-      <div className="bg-gray-100 text-primary">
+      <div className="bg-gray-100  text-primary">
         <div className="container flex justify-center mx-auto">
           <nav className="flex flex-wrap w-full">
             <Link

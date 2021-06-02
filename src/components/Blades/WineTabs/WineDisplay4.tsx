@@ -9,7 +9,7 @@ const WineDisplay = (props: Props) => {
       <div className="container flex flex-wrap mx-auto py-20">
         <div className="w-full mb-10 sm:mb-0 sm:w-1/3 flex justify-center sm:justify-end items-center">
           <StaticImage
-            src="../../../images/wine-1.png"
+            src="../../../images/wine-4.png"
             alt="Tulia"
             imgClassName="w-full"
             layout="constrained"

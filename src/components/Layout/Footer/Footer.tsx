@@ -10,13 +10,16 @@ const Footer: React.FC<Props> = props => {
     <div className="w-full bg-primary text-gray-400">
       <div className="container mx-auto py-8">
         <div className="mb-10 flex flex-col items-center w-full justify-center">
-          <StaticImage
-            src="../../../images/logo.png"
-            alt="Tulia"
-            layout="fixed"
-            height={40}
-            placeholder="blurred"
-          />
+          <div className="bg-white p-4 mb-4">
+            <StaticImage
+              src="../../../images/logo.png"
+              alt="Tulia"
+              layout="fixed"
+              height={40}
+              placeholder="blurred"
+            />
+          </div>
+
           <p>Lorem ipsum dolor blah….</p>
         </div>
         <div className="flex flex-wrap items-center justify-between">

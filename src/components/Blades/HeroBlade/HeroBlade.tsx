@@ -7,24 +7,26 @@ interface Props {}
 const HeroBlade: React.FC<Props> = props => {
   return (
     <div className={`${styles.HeroBlade} flex items-center`}>
-      <div className="container mx-auto text-white">
-        <div className="max-w-md">
-          <h1 className="font-thin text-secondary text-5xl mb-4">
-            Introducing Tulia
-          </h1>
-          <p className="text-4xl font-thin mb-4 font-serif">
-            Lorem ipsum dolor blah, Lorem ipsum dolor blah….
-          </p>
-          <p className="text-sm mb-5">
-            Avaialble in globally recognized stores
-          </p>
-          <Link
-            aria-label="Our wines"
-            to="/wines"
-            className="bg-secondary hover:bg-yellow-400 p-4 text-lg inline-flex items-center justify-center"
-          >
-            View our wines
-          </Link>
+      <div className="flex items-center w-full h-full bg-black bg-opacity-70">
+        <div className="container mx-auto text-white">
+          <div className="max-w-md">
+            <h1 className="font-thin text-secondary text-5xl mb-4">
+              Introducing Tulia
+            </h1>
+            <p className="text-4xl font-thin mb-4 font-serif">
+              Lorem ipsum dolor blah, Lorem ipsum dolor blah….
+            </p>
+            <p className="text-sm mb-5">
+              Avaialble in globally recognized stores
+            </p>
+            <Link
+              aria-label="Our wines"
+              to="/wines"
+              className="bg-secondary hover:bg-opacity-90 p-4 text-lg inline-flex items-center justify-center"
+            >
+              View our wines
+            </Link>
+          </div>
         </div>
       </div>
     </div>

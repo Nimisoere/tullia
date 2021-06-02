@@ -9,7 +9,7 @@ const Header = (props: Props) => {
   const [showMenu, setShowMenu] = React.useState<boolean>(false)
 
   return (
-    <div className="h-auto sm:h-16 sticky top-0 w-full flex items-stretch text-white bg-primary">
+    <div className="h-auto sm:h-16 sticky top-0 z-10 w-full flex items-stretch text-white bg-primary">
       <div className="container items-stretch flex flex-wrap relative justify-between mx-auto">
         <Link to="/" className="flex flex-wrap items-center justify-center">
           <StaticImage

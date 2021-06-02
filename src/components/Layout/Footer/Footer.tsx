@@ -36,18 +36,18 @@ const Footer: React.FC<Props> = props => {
           </nav>
           <div className="flex flex-wrap items-center">
             <nav className="flex flex-wrap items-center">
-              <Link className="p-4" to="https://facebook.com" target="_blank">
+              <a className="p-4" href="https://facebook.com" target="_blank">
                 <FaFacebook />
-              </Link>
-              <Link className="p-4" to="https://twitter.com">
+              </a>
+              <a className="p-4" href="https://twitter.com">
                 <FaTwitter />
-              </Link>
-              <Link className="p-4" to="https://instragram.com">
+              </a>
+              <a className="p-4" href="https://instragram.com">
                 <FaInstagram />
-              </Link>
-              <Link className="p-4" to="https://linkedin.com">
+              </a>
+              <a className="p-4" href="https://linkedin.com">
                 <FaLinkedin />
-              </Link>
+              </a>
             </nav>
             <span className="p-4">
               &copy; {new Date().getFullYear()}{" "}

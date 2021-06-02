@@ -1,4 +1,5 @@
 import React from "react"
+import ContactForm from "../components/Blades/ContactForm/ContactForm"
 import PageHeader from "../components/Blades/PageHeader/PageHeader"
 import Layout from "../components/Layout/Layout"
 
@@ -84,6 +85,7 @@ const Contact: React.FC<Props> = props => {
           </div>
         </div>
       </div>
+      <ContactForm />
     </Layout>
   )
 }

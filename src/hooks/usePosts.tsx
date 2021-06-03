@@ -5,21 +5,21 @@ interface Props {}
 
 const metadataQuery = graphql`
   query {
-    allMarkdownRemark {
+    allContentfulDataBlogPosts(sort: { fields: createdAt, order: DESC }) {
       edges {
         node {
           id
-          frontmatter {
-            title
-            date
-            category
-            thumbnail
+          slug
+          title
+          createdAt(fromNow: true)
+          category
+          summary {
+            summary
           }
-          timeToRead
-          excerpt
-          html
-          fields {
-            slug
+          thumbnail {
+            file {
+              url
+            }
           }
         }
       }

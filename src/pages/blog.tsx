@@ -15,10 +15,9 @@ const Blog: React.FC<Props> = props => {
       <div className="container flex flex-wrap mx-auto py-20">
         <div className="w-full sm:w-1/3">
           <QuickLinks />
-          <QuickLinks />
         </div>
         <div className="w-full max-w-3xl flex flex-col flex-wrap sm:w-2/3 mb-10">
-          {postsData?.allMarkdownRemark?.edges?.map(post => (
+          {postsData?.allContentfulDataBlogPosts?.edges?.map(post => (
             <BlogPostSummary post={post.node} key={post.node.id} />
           ))}
         </div>

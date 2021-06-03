@@ -1,8 +1,27 @@
+import { navigate } from "gatsby-link"
 import React from "react"
 
 interface Props {}
 
+function encode(data) {
+  return Object.keys(data)
+    .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+    .join("&")
+}
+
 const ContactForm = (props: Props) => {
+  const handleSubmit = event => {
+    event.preventDefault()
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({
+        "form-name": event.target.getAttribute("name"),
+      }),
+    })
+      .then(() => navigate("/contact"))
+      .catch(error => alert(error))
+  }
   return (
     <div className="w-full bg-gray-100 py-14">
       <div className="container max-w-3xl mx-auto">
@@ -11,7 +30,7 @@ const ContactForm = (props: Props) => {
         </h4>
         <form
           name="contact"
-          method="POST"
+          onSubmit={handleSubmit}
           data-netlify="true"
           netlify-honeypot="bot-field"
           className="w-full"

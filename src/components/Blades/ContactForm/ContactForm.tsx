@@ -9,7 +9,13 @@ const ContactForm = (props: Props) => {
         <h4 className="text-center text-4xl font-light mb-10">
           Send us a message
         </h4>
-        <div className="w-full">
+        <form
+          name="contact"
+          method="POST"
+          data-netlify="true"
+          netlify-honeypot="bot-field"
+          className="w-full"
+        >
           <div className="flex mb-2 flex-wrap w-full">
             <div className="w-full sm:w-1/2 sm:pr-4">
               <div className="mb-8 flex flex-col w-full">
@@ -51,13 +57,13 @@ const ContactForm = (props: Props) => {
           <div className="w-full flex justify-center items-center">
             <button
               className="bg-primary w-full sm:w-auto hover:bg-secondary text-white py-4 px-8"
-              type="button"
+              type="submit"
               aria-label="send message"
             >
               Send
             </button>
           </div>
-        </div>
+        </form>
       </div>
     </div>
   )

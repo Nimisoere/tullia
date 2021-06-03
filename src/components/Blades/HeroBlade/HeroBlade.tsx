@@ -11,7 +11,7 @@ const HeroBlade: React.FC<Props> = props => {
         <div className="container mx-auto text-white">
           <div className="max-w-md">
             <h1 className="font-thin text-secondary text-5xl mb-4">
-              Introducing Tulia
+              Introducing Tulia Wines
             </h1>
             <p className="text-4xl font-thin mb-4 font-serif">
               Lorem ipsum dolor blah, Lorem ipsum dolor blah….

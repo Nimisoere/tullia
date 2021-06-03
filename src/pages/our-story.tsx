@@ -8,7 +8,10 @@ interface Props {}
 const About: React.FC<Props> = props => {
   return (
     <Layout>
-      <PageHeader title="Our Story" description="Introducing you to Tulia" />
+      <PageHeader
+        title="Our Story"
+        description="Introducing you to Tulia Wines"
+      />
       <ImageText />
       <ImageText reverse backgroundColor="bg-gray-100" />
       <ImageText />

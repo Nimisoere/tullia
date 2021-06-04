@@ -1,5 +1,6 @@
 import { graphql } from "gatsby"
 import React from "react"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import PageHeader from "../components/Blades/PageHeader/PageHeader"
 import WineTabs from "../components/Blades/WineTabs/WineTabs"
 import WineDisplay from "../components/Blades/WineTabs/WineDisplay"
@@ -112,6 +113,8 @@ export const query = graphql`
           fixed {
             src
           }
+          title
+          description
           gatsbyImageData(
             width: 480
             placeholder: BLURRED
@@ -145,6 +148,23 @@ const Wine: React.FC<Props> = ({ data }) => {
       <PageHeader title={wineData.wineName} />
       <WineTabs />
       <WineDisplay wine={wineData} />
+      <div className="w-full py-20">
+        <div className="container mx-auto">
+          <h4 className="font-serif text-secondary text-5xl text-center mb-8">
+            Gallery
+          </h4>
+          <div className="flex flex-wrap max-w-4xl mx-auto">
+            {wineData?.gallery?.map(item => {
+              const image = getImage(item)
+              return (
+                <div className="w-full sm:w-1/3 p-2 bg-gray-200">
+                  <GatsbyImage image={image} alt={item.description} />
+                </div>
+              )
+            })}
+          </div>
+        </div>
+      </div>
     </Layout>
   )
 }

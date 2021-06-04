@@ -1,7 +1,9 @@
 import { navigate } from "gatsby-link"
 import React from "react"
 
-interface Props {}
+interface Props {
+  blade: any
+}
 
 function encode(data) {
   return Object.keys(data)
@@ -9,7 +11,9 @@ function encode(data) {
     .join("&")
 }
 
-const ContactForm = (props: Props) => {
+const ContactForm: React.FC<Props> = ({ blade }) => {
+  const [submitted, setSubmitted] = React.useState<boolean>(false)
+
   const handleSubmit = event => {
     event.preventDefault()
     fetch("/", {
@@ -19,14 +23,21 @@ const ContactForm = (props: Props) => {
         "form-name": event.target.getAttribute("name"),
       }),
     })
-      .then(() => navigate("/contact"))
+      .then(() => {
+        setSubmitted(true)
+      })
       .catch(error => alert(error))
   }
   return (
     <div className="w-full bg-gray-100 py-14">
       <div className="container max-w-3xl mx-auto">
+        {submitted && (
+          <div className="bg-green-100 p-4 text-green-700 mb-4">
+            Form submitted successfully
+          </div>
+        )}
         <h4 className="text-center text-4xl font-light mb-10">
-          Send us a message
+          {blade?.formTitle}
         </h4>
         <form
           name="contact"
@@ -75,11 +86,11 @@ const ContactForm = (props: Props) => {
 
           <div className="w-full flex justify-center items-center">
             <button
-              className="bg-primary w-full sm:w-auto hover:bg-secondary text-white py-4 px-8"
+              className={`bg-${blade?.primaryCta?.buttonStyle?.toLowerCase()} w-full sm:w-auto hover:bg-secondary text-white py-4 px-8`}
               type="submit"
               aria-label="send message"
             >
-              Send
+              {blade?.primaryCta?.caption}
             </button>
           </div>
         </form>

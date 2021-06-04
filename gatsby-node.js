@@ -3,6 +3,8 @@ const path = require('path')
 
 module.exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
+
+  // Create Blog Pages
   const blogTemplate = path.resolve('./src/templates/blog.template.tsx')
   const res = await graphql(`
     query {
@@ -25,6 +27,7 @@ module.exports.createPages = async ({ graphql, actions }) => {
     })
   })
 
+  // Create Wine Pages
   const wineTemplate = path.resolve('./src/templates/wine.template.tsx')
   const wineres = await graphql(`
     query {
@@ -43,6 +46,30 @@ module.exports.createPages = async ({ graphql, actions }) => {
       path: `/wines/${edge.node.slug}`,
       context: {
         slug: edge.node.slug
+      }
+    })
+  })
+
+  // Create Generic Pages
+  const pageTemplate = path.resolve('./src/templates/page.template.tsx')
+  const pageRes = await graphql(`
+    query {
+      allContentfulPage {
+        edges {
+          node {
+            relativePath
+          }
+        }
+      }
+    }
+  `)
+  pageRes.data.allContentfulPage.edges.forEach((edge) => {
+    console.log(JSON.stringify(edge, null, 2))
+    createPage({
+      component: pageTemplate,
+      path: `/${edge.node.relativePath === '/' ? '' : edge.node.relativePath}`,
+      context: {
+        relativePath: edge.node.relativePath
       }
     })
   })

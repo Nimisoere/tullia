@@ -13,7 +13,7 @@ const PageHeader: React.FC<Props> = ({ title, description }) => {
       <Helmet title={title} defaultTitle="Tulia Wine" defer={false} />
 
       <div className="container mx-auto text-white">
-        <div className="max-w-md mx-auto text-center">
+        <div className="max-w-xl mx-auto text-center">
           <h1 className="font-thin text-secondary text-5xl mb-4">{title}</h1>
           <p className="text-4xl font-thin mb-4 font-serif">{description}</p>
         </div>

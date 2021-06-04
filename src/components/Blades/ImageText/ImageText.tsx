@@ -17,11 +17,10 @@ const ImageText: React.FC<Props> = ({ blade }) => {
       >
         <div className="w-full sm:w-1/2 flex  justify-center">
           <div className="max-w-lg mx-auto px-8 mb-10">
-            <StaticImage
-              src="../../../images/wine-taste.jpeg"
+            <img
+              src={blade?.image?.fixed?.src}
               alt="Tulia"
-              imgClassName="w-full"
-              layout="constrained"
+              className="w-full"
               placeholder="blurred"
             />
           </div>

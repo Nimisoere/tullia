@@ -37,7 +37,7 @@ const ContactForm: React.FC<Props> = ({ blade }) => {
       .catch(error => alert(error))
   }
   const handleChange = (e: any) => {
-    setFormData({ [e.target.name]: e.target.value })
+    setFormData({ ...formData, [e.target.name]: e.target.value })
   }
 
   return (
@@ -58,6 +58,13 @@ const ContactForm: React.FC<Props> = ({ blade }) => {
           netlify-honeypot="bot-field"
           className="w-full"
         >
+          <input type="hidden" name="form-name" value="contact" />
+          <p className="hidden">
+            <label>
+              Don’t fill this out:
+              <input name="bot-field" onChange={handleChange} />
+            </label>
+          </p>
           <div className="flex mb-2 flex-wrap w-full">
             <div className="w-full sm:w-1/2 sm:pr-4">
               <div className="mb-8 flex flex-col w-full">

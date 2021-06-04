@@ -241,7 +241,6 @@ export const query = graphql`
 
 const Page: React.FC<Props> = ({ data }) => {
   const page = data.contentfulPage
-  console.log(data)
   return (
     <Layout
       headerNavData={data.header}

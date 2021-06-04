@@ -19,11 +19,10 @@ const WineDisplay: React.FC<Props> = ({ wine }) => {
           <div className="w-full max-w-lg shadow bg-secondary p-8">
             <h4 className="font-light font-serif capitalize mb-4 flex items-center text-3xl">
               {wine?.wineName}{" "}
-              <span className="font-thin ml-4 text-4xl font-cursive capitalize">
-                {wine?.wineCategory}
-              </span>
             </h4>
-
+            <p className="font-thin text-4xl font-cursive capitalize">
+              {wine?.wineCategory}
+            </p>
             <ReactMarkdown
               className="font-light py-4"
               children={wine?.summary?.summary}

@@ -10,7 +10,6 @@ interface Props {
 }
 
 const Header: React.FC<Props> = ({ headerNavData }) => {
-  console.log(headerNavData)
   const [showMenu, setShowMenu] = React.useState<boolean>(false)
 
   return (

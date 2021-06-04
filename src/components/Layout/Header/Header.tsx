@@ -44,7 +44,7 @@ const Header: React.FC<Props> = ({ headerNavData }) => {
           className={`${
             showMenu ? "flex" : "hidden"
           } h-full sm:flex flex-col fixed 
-          left-0 bg-primary sm:bg-white text-white sm:text-primary sm:relative sm:flex-row w-full sm:w-auto flex-wrap sm:flex-nowrap text-lg items-stretch justify-center`}
+          left-0 top-0 bg-primary sm:bg-white text-white sm:text-primary sm:relative sm:flex-row w-full sm:w-auto flex-wrap sm:flex-nowrap text-lg items-stretch justify-center`}
         >
           <button
             onClick={() => {

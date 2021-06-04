@@ -14,12 +14,12 @@ function encode(data) {
 const ContactForm: React.FC<Props> = ({ blade }) => {
   const [submitted, setSubmitted] = React.useState<boolean>(false)
   const [formData, setFormData] = React.useState<any>({
-    name: "",
+    fullname: "",
     email: "",
     message: "",
   })
 
-  const { name, email, message } = formData
+  const { fullname, email, message } = formData
 
   const handleSubmit = event => {
     event.preventDefault()
@@ -64,8 +64,8 @@ const ContactForm: React.FC<Props> = ({ blade }) => {
                 <label className="mb-2">Full Name</label>
                 <input
                   type="text"
-                  name="name"
-                  value={name}
+                  name="fullname"
+                  value={fullname}
                   onChange={handleChange}
                   placeholder="Full name"
                   className="border border-gray-200 p-4"

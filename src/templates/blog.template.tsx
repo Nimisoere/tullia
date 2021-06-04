@@ -127,22 +127,22 @@ export const options = {
   renderNode: {
     [BLOCKS.PARAGRAPH]: (node, children) => <p className="mb-4">{children}</p>,
     [BLOCKS.HEADING_1]: (node, children) => (
-      <h1 className="font-semibold text-5xl">{children}</h1>
+      <h1 className="font-semibold font-serif text-5xl">{children}</h1>
     ),
     [BLOCKS.HEADING_2]: (node, children) => (
-      <h2 className="font-semibold text-4xl">{children}</h2>
+      <h2 className="font-semibold font-serif text-4xl">{children}</h2>
     ),
     [BLOCKS.HEADING_3]: (node, children) => (
-      <h3 className="font-semibold text-3xl">{children}</h3>
+      <h3 className="font-semibold font-serif text-3xl">{children}</h3>
     ),
     [BLOCKS.HEADING_4]: (node, children) => (
-      <h4 className="font-semibold text-2xl">{children}</h4>
+      <h4 className="font-semibold font-serif text-2xl">{children}</h4>
     ),
     [BLOCKS.HEADING_5]: (node, children) => (
-      <h5 className="font-semibold text-xl">{children}</h5>
+      <h5 className="font-semibold font-serif text-xl">{children}</h5>
     ),
     [BLOCKS.HEADING_6]: (node, children) => (
-      <h6 className="font-semibold text-lg">{children}</h6>
+      <h6 className="font-semibold font-serif text-lg">{children}</h6>
     ),
     [BLOCKS.EMBEDDED_ASSET]: node => {
       const image = getImage(node.data.target)

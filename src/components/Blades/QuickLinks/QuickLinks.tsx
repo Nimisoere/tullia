@@ -11,7 +11,7 @@ const QuickLinks = (props: Props) => {
   )
   return (
     <nav className="flex flex-col max-w-sm mb-8">
-      <h4 className="font-medium mb-4">Quick Links</h4>
+      <h4 className="font-medium font-serif text-xl mb-4">Quick Links</h4>
 
       {quickLinks?.map(link => (
         <Link

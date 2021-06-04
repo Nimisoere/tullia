@@ -34,7 +34,7 @@ const Footer: React.FC<Props> = ({ footerNavData, socialMediaMavData }) => {
             {footerNavData?.navigationItems?.map(item => (
               <Link
                 key={item.contentfulId}
-                className="p-4"
+                className="p-4 text-lg"
                 to={`${item?.mainLink?.linkUrl}`}
               >
                 {item?.title}
@@ -47,7 +47,7 @@ const Footer: React.FC<Props> = ({ footerNavData, socialMediaMavData }) => {
                 const icon = item?.icon?.split("-")
                 return (
                   <a
-                    className="p-4"
+                    className="p-4 text-lg"
                     key={item.contentfulId}
                     href={item?.mainLink?.linkUrl}
                     target={item?.mainLink?.openInNewWindow && "_blank"}

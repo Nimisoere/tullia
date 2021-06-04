@@ -21,7 +21,7 @@ const Carousel: React.FC<Props> = ({ blade }) => {
                     className="w-full h-16 sm:h-auto sm:w-1/4"
                   />
                   <div className="p-8 w-full sm:w-3/4">
-                    <h4 className="mb-4 text-xl text-secondary">
+                    <h4 className="mb-4 font-serif text-lg text-xl text-secondary">
                       {slide.title}
                     </h4>
                     <address className="font-light mb-4">

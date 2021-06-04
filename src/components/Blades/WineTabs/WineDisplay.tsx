@@ -16,10 +16,14 @@ const WineDisplay: React.FC<Props> = ({ wine }) => {
           <img src={wine?.thumbnail?.fixed?.src} alt={wine?.wineName} />
         </div>
         <div className="sm:px-10 w-full sm:w-2/3">
-          <div className="w-full max-w-lg shadow bg-secondary p-4">
-            <h4 className="font-light capitalize mb-4 flex items-center text-3xl">
-              {wine?.wineName}
+          <div className="w-full max-w-lg shadow bg-secondary p-8">
+            <h4 className="font-light font-serif capitalize mb-4 flex items-center text-3xl">
+              {wine?.wineName}{" "}
+              <span className="font-thin ml-4 text-4xl font-cursive capitalize">
+                {wine?.wineCategory}
+              </span>
             </h4>
+
             <ReactMarkdown
               className="font-light py-4"
               children={wine?.summary?.summary}

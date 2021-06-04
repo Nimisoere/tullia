@@ -21,10 +21,10 @@ const HeroBlade: React.FC<Props> = ({ blade }) => {
       <div className="flex items-center w-full h-full bg-black bg-opacity-70">
         <div className="container mx-auto text-white">
           <div className="max-w-md">
-            <h1 className="font-thin text-secondary text-5xl mb-4">
+            <h1 className="font-thin font-cursive text-secondary text-6xl mb-4">
               {blade.headline}
             </h1>
-            <div className="text-4xl font-thin mb-4 font-serif">
+            <div className="text-xl font-thin mb-4">
               {renderRichText(blade.copy)}
             </div>
             <p className="text-sm mb-5">{blade.caption}</p>

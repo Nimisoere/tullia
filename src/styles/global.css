@@ -1,4 +1,22 @@
 @import url("https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Cinzel+Decorative&display=swap");
+
+@font-face {
+  font-family: "Adinekirnberg";
+  src: url("../fonts/adinekirnberg_script/adinekir.ttf") format("truetype"),
+    url("../fonts/adinekirnberg_script/adinekir.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Times-LT";
+  src: url("../fonts/times-lt-std/times-lt-std-roman.otf") format("opentype");
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.font-cursive {
+  font-family: "Adinekirnberg", "Great Vibes", sans-serif;
+}

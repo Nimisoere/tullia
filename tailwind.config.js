@@ -7,7 +7,8 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        serif: ['Great Vibes', 'sans-serif'],
+        sans: ['Times-LT', 'sans-serif'],
+        serif: ['Bodoni Moda', 'sans-serif'],
       },
       colors: {
         primary: '#131313',

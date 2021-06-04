@@ -3,11 +3,20 @@ import { StaticImage } from "gatsby-plugin-image"
 import { Link } from "gatsby"
 import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram } from "react-icons/fa"
 
-interface Props {}
+interface Props {
+  socialMediaMavData?: any
+  footerNavData?: any
+}
 
-const Footer: React.FC<Props> = props => {
+const Footer: React.FC<Props> = ({ footerNavData, socialMediaMavData }) => {
+  const iconMap = {
+    FaFacebook,
+    FaTwitter,
+    FaLinkedin,
+    FaInstagram,
+  }
   return (
-    <div className="w-full bg-primary text-gray-400">
+    <div className="w-full bg-secondary text-white">
       <div className="container mx-auto py-8">
         <div className="mb-10 flex flex-col items-center w-full justify-center">
           <div className="bg-white p-4 mb-4">
@@ -19,38 +28,34 @@ const Footer: React.FC<Props> = props => {
               placeholder="blurred"
             />
           </div>
-
-          <p>Lorem ipsum dolor blah….</p>
         </div>
         <div className="flex flex-wrap items-center justify-between">
           <nav className="flex flex-wrap items-center">
-            <Link className="p-4" to="/faq">
-              FAQ
-            </Link>
-            <Link className="p-4" to="/terms-and-conditions">
-              Terms and Conditions
-            </Link>
-            <Link className="p-4" to="/privacy-policy">
-              Privacy policy
-            </Link>
-            <Link className="p-4" to="/contact">
-              Contact Us
-            </Link>
+            {footerNavData?.navigationItems?.map(item => (
+              <Link
+                key={item.contentfulId}
+                className="p-4"
+                to={`${item?.mainLink?.linkUrl}`}
+              >
+                {item?.title}
+              </Link>
+            ))}
           </nav>
           <div className="flex flex-wrap items-center">
             <nav className="flex flex-wrap items-center">
-              <a className="p-4" href="https://facebook.com" target="_blank">
-                <FaFacebook />
-              </a>
-              <a className="p-4" href="https://twitter.com">
-                <FaTwitter />
-              </a>
-              <a className="p-4" href="https://instragram.com">
-                <FaInstagram />
-              </a>
-              <a className="p-4" href="https://linkedin.com">
-                <FaLinkedin />
-              </a>
+              {socialMediaMavData?.navigationItems?.map(item => {
+                const icon = item?.icon?.split("-")
+                return (
+                  <a
+                    className="p-4"
+                    key={item.contentfulId}
+                    href={item?.mainLink?.linkUrl}
+                    target={item?.mainLink?.openInNewWindow && "_blank"}
+                  >
+                    {iconMap[icon[0]]()}
+                  </a>
+                )
+              })}
             </nav>
             <span className="p-4">
               &copy; {new Date().getFullYear()}{" "}

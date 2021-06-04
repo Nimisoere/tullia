@@ -1,13 +1,16 @@
-import { Link } from "gatsby"
+import { graphql, Link } from "gatsby"
 import React from "react"
 import { IoIosMenu } from "react-icons/io"
 import { MdClose } from "react-icons/md"
 
 import { StaticImage } from "gatsby-plugin-image"
 
-interface Props {}
+interface Props {
+  headerNavData: any
+}
 
-const Header = (props: Props) => {
+const Header: React.FC<Props> = ({ headerNavData }) => {
+  console.log(headerNavData)
   const [showMenu, setShowMenu] = React.useState<boolean>(false)
 
   return (
@@ -21,7 +24,7 @@ const Header = (props: Props) => {
             src="../../../images/logo.png"
             alt="Tulia"
             layout="fixed"
-            height={40}
+            height={60}
             placeholder="blurred"
           />
         </Link>
@@ -51,41 +54,16 @@ const Header = (props: Props) => {
           >
             <MdClose className="text-4xl absolute right-3 top-3" />
           </button>
-          <Link
-            activeClassName="text-secondary"
-            className="flex items-center justify-center py-2 sm:px-4 sm:py-0"
-            to="/"
-          >
-            Home
-          </Link>
-          <Link
-            activeClassName="text-secondary"
-            className="flex items-center justify-center py-2 sm:px-4 sm:py-0"
-            to="/our-story"
-          >
-            Our Story
-          </Link>
-          <Link
-            activeClassName="text-secondary"
-            className="flex items-center justify-center py-2 sm:px-4 sm:py-0"
-            to="/wines"
-          >
-            Our Wines
-          </Link>
-          <Link
-            activeClassName="text-secondary"
-            className="flex items-center justify-center py-2 sm:px-4 sm:py-0"
-            to="/blog"
-          >
-            Blog
-          </Link>
-          <Link
-            activeClassName="text-secondary"
-            className="flex items-center justify-center py-2 sm:px-4 sm:py-0"
-            to="/contact"
-          >
-            Contact
-          </Link>
+          {headerNavData?.navigationItems?.map(item => (
+            <Link
+              key={item.contentfulId}
+              activeClassName="text-secondary"
+              className="flex items-center justify-center py-2 sm:px-4 sm:py-0"
+              to={`${item?.mainLink?.linkUrl}`}
+            >
+              {item?.title}
+            </Link>
+          ))}
         </nav>
       </div>
     </div>

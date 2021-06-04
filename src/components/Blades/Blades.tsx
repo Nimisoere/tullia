@@ -21,7 +21,9 @@ const Blade: React.FC<BladeProp> = ({ blade }) => {
   } else if (blade.__typename === "ContentfulBladeHero") {
     return <HeroBlade blade={blade} />
   } else if (blade.__typename === "ContentfulNavNavigation") {
-    return <HomeNavigation blade={blade} />
+    if (blade?.navVariant === "Image") {
+      return <HomeNavigation blade={blade} />
+    }
   } else if (blade.__typename === "ContentfulBladeImageText") {
     return <ImageText blade={blade} />
   } else if (blade.__typename === "ContentfulBladeRichText") {

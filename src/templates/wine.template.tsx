@@ -11,6 +11,90 @@ interface Props {
 
 export const query = graphql`
   query($slug: String!) {
+    header: contentfulNavNavigation(
+      contentful_id: { eq: "7eYCIoBsSzSIXvgk2TNi9A" }
+    ) {
+      ... on ContentfulNavNavigation {
+        id
+        contentful_id
+        __typename
+        navVariant
+        navigationItems {
+          ... on ContentfulNavNavigationItem {
+            __typename
+            title
+            itemVariant
+            navigationImage {
+              file {
+                url
+              }
+            }
+            icon
+            mainLink {
+              linkText
+              linkUrl
+              openInNewWindow
+            }
+          }
+        }
+      }
+    }
+    footer: contentfulNavNavigation(
+      contentful_id: { eq: "3dY9doPrL5ivj6iH9xJ0nw" }
+    ) {
+      ... on ContentfulNavNavigation {
+        id
+        contentful_id
+        __typename
+        navVariant
+        navigationItems {
+          ... on ContentfulNavNavigationItem {
+            __typename
+            title
+            itemVariant
+            navigationImage {
+              file {
+                url
+              }
+            }
+            icon
+            mainLink {
+              linkText
+              linkUrl
+              openInNewWindow
+            }
+          }
+        }
+      }
+    }
+    socialMedia: contentfulNavNavigation(
+      contentful_id: { eq: "5tdxvnTJ98vy7R7BkgF9au" }
+    ) {
+      ... on ContentfulNavNavigation {
+        id
+        contentful_id
+        __typename
+        navVariant
+        navigationItems {
+          ... on ContentfulNavNavigationItem {
+            __typename
+            title
+            itemVariant
+            navigationImage {
+              file {
+                url
+              }
+            }
+            icon
+            mainLink {
+              linkText
+              linkUrl
+              openInNewWindow
+            }
+          }
+        }
+      }
+    }
     contentfulDataWines(slug: { eq: $slug }) {
       id
       contentful_id
@@ -53,7 +137,11 @@ export const query = graphql`
 const Wine: React.FC<Props> = ({ data }) => {
   const wineData = data.contentfulDataWines
   return (
-    <Layout>
+    <Layout
+      headerNavData={data.header}
+      footerNavData={data.footer}
+      socialMediaMavData={data.socialMedia}
+    >
       <PageHeader title={wineData.wineName} />
       <WineTabs />
       <WineDisplay wine={wineData} />

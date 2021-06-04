@@ -12,6 +12,90 @@ interface Props {
 
 export const query = graphql`
   query($relativePath: String!) {
+    header: contentfulNavNavigation(
+      contentful_id: { eq: "7eYCIoBsSzSIXvgk2TNi9A" }
+    ) {
+      ... on ContentfulNavNavigation {
+        id
+        contentful_id
+        __typename
+        navVariant
+        navigationItems {
+          ... on ContentfulNavNavigationItem {
+            __typename
+            title
+            itemVariant
+            navigationImage {
+              file {
+                url
+              }
+            }
+            icon
+            mainLink {
+              linkText
+              linkUrl
+              openInNewWindow
+            }
+          }
+        }
+      }
+    }
+    footer: contentfulNavNavigation(
+      contentful_id: { eq: "3dY9doPrL5ivj6iH9xJ0nw" }
+    ) {
+      ... on ContentfulNavNavigation {
+        id
+        contentful_id
+        __typename
+        navVariant
+        navigationItems {
+          ... on ContentfulNavNavigationItem {
+            __typename
+            title
+            itemVariant
+            navigationImage {
+              file {
+                url
+              }
+            }
+            icon
+            mainLink {
+              linkText
+              linkUrl
+              openInNewWindow
+            }
+          }
+        }
+      }
+    }
+    socialMedia: contentfulNavNavigation(
+      contentful_id: { eq: "5tdxvnTJ98vy7R7BkgF9au" }
+    ) {
+      ... on ContentfulNavNavigation {
+        id
+        contentful_id
+        __typename
+        navVariant
+        navigationItems {
+          ... on ContentfulNavNavigationItem {
+            __typename
+            title
+            itemVariant
+            navigationImage {
+              file {
+                url
+              }
+            }
+            icon
+            mainLink {
+              linkText
+              linkUrl
+              openInNewWindow
+            }
+          }
+        }
+      }
+    }
     contentfulPage(relativePath: { eq: $relativePath }) {
       id
       contentful_id
@@ -20,6 +104,11 @@ export const query = graphql`
       showQuickLinks
       pageDescription {
         pageDescription
+      }
+      pageHeaderBanner {
+        file {
+          url
+        }
       }
       hidePageHeader
       blades {
@@ -65,11 +154,17 @@ export const query = graphql`
           id
           contentful_id
           __typename
+          navVariant
           navigationItems {
             ... on ContentfulNavNavigationItem {
               __typename
               title
               itemVariant
+              navigationImage {
+                file {
+                  url
+                }
+              }
               icon
               mainLink {
                 linkText
@@ -146,12 +241,18 @@ export const query = graphql`
 
 const Page: React.FC<Props> = ({ data }) => {
   const page = data.contentfulPage
+  console.log(data)
   return (
-    <Layout>
+    <Layout
+      headerNavData={data.header}
+      footerNavData={data.footer}
+      socialMediaMavData={data.socialMedia}
+    >
       {!page.hidePageHeader && (
         <PageHeader
           title={page.pageTitle}
           description={page?.pageDescription?.pageDescription}
+          banner={page?.pageHeaderBanner?.file?.url}
         />
       )}
       {page?.showQuickLinks ? (

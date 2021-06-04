@@ -13,6 +13,90 @@ interface Props {
 
 export const query = graphql`
   query($slug: String!) {
+    header: contentfulNavNavigation(
+      contentful_id: { eq: "7eYCIoBsSzSIXvgk2TNi9A" }
+    ) {
+      ... on ContentfulNavNavigation {
+        id
+        contentful_id
+        __typename
+        navVariant
+        navigationItems {
+          ... on ContentfulNavNavigationItem {
+            __typename
+            title
+            itemVariant
+            navigationImage {
+              file {
+                url
+              }
+            }
+            icon
+            mainLink {
+              linkText
+              linkUrl
+              openInNewWindow
+            }
+          }
+        }
+      }
+    }
+    footer: contentfulNavNavigation(
+      contentful_id: { eq: "3dY9doPrL5ivj6iH9xJ0nw" }
+    ) {
+      ... on ContentfulNavNavigation {
+        id
+        contentful_id
+        __typename
+        navVariant
+        navigationItems {
+          ... on ContentfulNavNavigationItem {
+            __typename
+            title
+            itemVariant
+            navigationImage {
+              file {
+                url
+              }
+            }
+            icon
+            mainLink {
+              linkText
+              linkUrl
+              openInNewWindow
+            }
+          }
+        }
+      }
+    }
+    socialMedia: contentfulNavNavigation(
+      contentful_id: { eq: "5tdxvnTJ98vy7R7BkgF9au" }
+    ) {
+      ... on ContentfulNavNavigation {
+        id
+        contentful_id
+        __typename
+        navVariant
+        navigationItems {
+          ... on ContentfulNavNavigationItem {
+            __typename
+            title
+            itemVariant
+            navigationImage {
+              file {
+                url
+              }
+            }
+            icon
+            mainLink {
+              linkText
+              linkUrl
+              openInNewWindow
+            }
+          }
+        }
+      }
+    }
     contentfulDataBlogPosts(slug: { eq: $slug }) {
       title
       createdAt(fromNow: true)
@@ -74,7 +158,11 @@ export const options = {
 const Blog: React.FC<Props> = ({ data }) => {
   const document = data?.contentfulDataBlogPosts?.blogPost
   return (
-    <Layout>
+    <Layout
+      headerNavData={data.header}
+      footerNavData={data.footer}
+      socialMediaMavData={data.socialMedia}
+    >
       <PageHeader title={data?.contentfulDataBlogPosts?.title} />
       <div className="w-full bg-gray-100">
         <div className="container mx-auto py-4">

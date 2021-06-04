@@ -5,7 +5,6 @@ interface Props {
 }
 
 const Carousel: React.FC<Props> = ({ blade }) => {
-  console.log(blade)
   return (
     <div className="w-full py-10">
       <div className="container flex flex-wrap mx-auto">

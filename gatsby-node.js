@@ -64,7 +64,6 @@ module.exports.createPages = async ({ graphql, actions }) => {
     }
   `)
   pageRes.data.allContentfulPage.edges.forEach((edge) => {
-    console.log(JSON.stringify(edge, null, 2))
     createPage({
       component: pageTemplate,
       path: `/${edge.node.relativePath === '/' ? '' : edge.node.relativePath}`,

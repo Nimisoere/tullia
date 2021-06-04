@@ -38,7 +38,6 @@ const WineTabs: React.FC<Props> = props => {
                   to={`/wines/${edge?.node?.slug}`}
                   activeClassName="border-secondary"
                   className="p-4 hover:bg-gray-200 bg-transparent font-light text-lg w-full sm:w-1/5 flex sm:flex-col items-center  border-b-4 border-primary"
-                  type="button"
                 >
                   <img
                     className="h-20"

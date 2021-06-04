@@ -38,6 +38,9 @@ const Header: React.FC<Props> = ({ headerNavData }) => {
           <IoIosMenu className="text-4xl" />
         </button>
         <nav
+          style={{
+            WebkitBackfaceVisibility: "hidden",
+          }}
           className={`${
             showMenu ? "flex" : "hidden"
           } h-full sm:flex flex-col fixed 

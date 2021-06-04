@@ -13,6 +13,13 @@ function encode(data) {
 
 const ContactForm: React.FC<Props> = ({ blade }) => {
   const [submitted, setSubmitted] = React.useState<boolean>(false)
+  const [formData, setFormData] = React.useState<any>({
+    name: "",
+    email: "",
+    message: "",
+  })
+
+  const { name, email, message } = formData
 
   const handleSubmit = event => {
     event.preventDefault()
@@ -21,6 +28,7 @@ const ContactForm: React.FC<Props> = ({ blade }) => {
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode({
         "form-name": event.target.getAttribute("name"),
+        ...formData,
       }),
     })
       .then(() => {
@@ -28,6 +36,10 @@ const ContactForm: React.FC<Props> = ({ blade }) => {
       })
       .catch(error => alert(error))
   }
+  const handleChange = (e: any) => {
+    setFormData({ [e.target.name]: e.target.value })
+  }
+
   return (
     <div className="w-full bg-gray-100 py-14">
       <div className="container max-w-3xl mx-auto">
@@ -52,7 +64,9 @@ const ContactForm: React.FC<Props> = ({ blade }) => {
                 <label className="mb-2">Full Name</label>
                 <input
                   type="text"
-                  name="fullname"
+                  name="name"
+                  value={name}
+                  onChange={handleChange}
                   placeholder="Full name"
                   className="border border-gray-200 p-4"
                 />
@@ -64,6 +78,8 @@ const ContactForm: React.FC<Props> = ({ blade }) => {
                 <input
                   type="email"
                   name="email"
+                  value={email}
+                  onChange={handleChange}
                   placeholder="Email"
                   className="border border-gray-200 p-4"
                 />
@@ -76,6 +92,8 @@ const ContactForm: React.FC<Props> = ({ blade }) => {
                 <label className="mb-2">Message</label>
                 <textarea
                   name="message"
+                  value={message}
+                  onChange={handleChange}
                   placeholder="Message"
                   rows={5}
                   className="border border-gray-200 p-4"

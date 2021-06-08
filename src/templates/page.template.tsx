@@ -127,29 +127,6 @@ export const query = graphql`
             }
           }
         }
-        ... on ContentfulBladeHero {
-          id
-          contentful_id
-          __typename
-          headline
-          copy {
-            raw
-          }
-          caption
-          backgroundImage {
-            file {
-              url
-            }
-          }
-          ctaPrimary {
-            ... on ContentfulElementCallToAction {
-              url
-              caption
-              buttonStyle
-              buttonWidth
-            }
-          }
-        }
         ... on ContentfulNavNavigation {
           id
           contentful_id
@@ -218,6 +195,29 @@ export const query = graphql`
           contentful_id
           __typename
           slides {
+            ... on ContentfulBladeHero {
+              id
+              contentful_id
+              __typename
+              headline
+              copy {
+                raw
+              }
+              caption
+              backgroundImage {
+                file {
+                  url
+                }
+              }
+              ctaPrimary {
+                ... on ContentfulElementCallToAction {
+                  url
+                  caption
+                  buttonStyle
+                  buttonWidth
+                }
+              }
+            }
             ... on ContentfulBladeContactCard {
               __typename
               title

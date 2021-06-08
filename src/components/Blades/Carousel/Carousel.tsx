@@ -1,48 +1,44 @@
 import React from "react"
+import Slider from "react-slick"
+
+import ContactCard from "../ContactCard/ContactCard"
+import HeroBlade from "../HeroBlade/HeroBlade"
+import "slick-carousel/slick/slick.css"
+import "slick-carousel/slick/slick-theme.css"
 
 interface Props {
   blade: any
 }
 
 const Carousel: React.FC<Props> = ({ blade }) => {
-  return (
-    <div className="w-full py-10">
-      <div className="container flex flex-wrap mx-auto">
-        {blade.slides?.map(slide => {
-          if (slide.__typename === "ContentfulBladeContactCard") {
-            return (
-              <div key={slide.contentfulId} className="w-full lg:w-1/3 sm:p-4">
-                <div className="bg-primary h-full w-full flex flex-wrap mb-10 sm:mb-0 items-stretch text-white">
-                  <div
-                    style={{
-                      backgroundImage: `url(https:${slide?.image?.file?.url})`,
-                      backgroundSize: "cover",
-                    }}
-                    className="w-full h-16 sm:h-auto sm:w-1/4"
-                  />
-                  <div className="p-8 w-full sm:w-3/4">
-                    <h4 className="mb-4 font-serif text-lg text-xl text-secondary">
-                      {slide.title}
-                    </h4>
-                    <address className="font-light mb-4">
-                      {slide.address?.address}
-                    </address>
-                    <p>
-                      <span>Phone:</span> {slide.phoneNumber?.join(", ")}
-                    </p>
-                    <p>
-                      <span>Email:</span> {slide.emails?.join(", ")}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            )
-          }
-          return null
-        })}
-      </div>
-    </div>
-  )
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: blade.slides[0].__typename === "ContentfulBladeHero" ? 1 : 3,
+    slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 640,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: true,
+        },
+      },
+    ],
+  }
+  const Slides = blade.slides?.map((slide: any, index: number) => {
+    if (slide.__typename === "ContentfulBladeContactCard") {
+      return <ContactCard key={slide.contentfulId} slide={slide} />
+    }
+    if (slide.__typename === "ContentfulBladeHero") {
+      return <HeroBlade key={slide.contentfulId} blade={slide} />
+    }
+    return <React.Fragment key={slide.contentfulId}></React.Fragment>
+  })
+  return <Slider {...settings}>{Slides}</Slider>
 }
 
 export default Carousel

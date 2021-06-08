@@ -14,7 +14,9 @@ const Carousel: React.FC<Props> = ({ blade }) => {
   const settings = {
     dots: true,
     infinite: true,
-    speed: 500,
+    speed: 2000,
+    autoplaySpeed: 2000,
+    autoplay: true,
     slidesToShow: blade.slides[0].__typename === "ContentfulBladeHero" ? 1 : 3,
     slidesToScroll: 1,
     responsive: [

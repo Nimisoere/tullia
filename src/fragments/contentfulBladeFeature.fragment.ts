@@ -10,9 +10,7 @@ export const featureFragment = graphql`
       raw
     }
     image {
-      file {
-        url
-      }
+      ...assetFragment
     }
   }
 `

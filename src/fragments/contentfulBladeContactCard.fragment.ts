@@ -12,9 +12,7 @@ export const contactCardFragment = graphql`
     }
     emails
     image {
-      file {
-        url
-      }
+      ...assetFragment
     }
   }
 `

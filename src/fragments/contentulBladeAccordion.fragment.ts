@@ -16,6 +16,7 @@ export const accordionFragment = graphql`
 export const accordionElementFragment = graphql`
   fragment accordionElementFragment on ContentfulElementAccordion {
     headline
+    id
     contentful_id
     __typename
     caption {

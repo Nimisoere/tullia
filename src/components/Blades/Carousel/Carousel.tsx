@@ -13,7 +13,7 @@ interface Props {
 
 const Carousel: React.FC<Props> = ({ blade }) => {
   const settings = {
-    dots: true,
+    dots: false,
     infinite: true,
     lazyLoad: true,
     speed: 1000,
@@ -51,13 +51,16 @@ const Carousel: React.FC<Props> = ({ blade }) => {
   }
   return (
     <>
-      <div className="w-full pt-10">
-        <div className="mx-auto container">
-          <h4 className="font-serif text-secondary text-5xl text-center mb-8">
-            {blade.headline}
-          </h4>
+      {blade.headline && (
+        <div className="w-full pt-10">
+          <div className="mx-auto container">
+            <h4 className="font-serif text-secondary text-5xl text-center mb-8">
+              {blade.headline}
+            </h4>
+          </div>
         </div>
-      </div>
+      )}
+
       <div className={`${blade.wrapperClassName?.join(" ")} flex flex-wrap`}>
         {Slides}
       </div>

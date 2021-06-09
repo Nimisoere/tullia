@@ -7,7 +7,7 @@ interface Props {
 
 const HomeNavigation = ({ blade }) => {
   return (
-    <div className="w-full flex flex-wrap">
+    <div className="w-full flex flex-wrap mb-2">
       {blade?.navigationItems?.map(item => (
         <Link
           key={item.contentfulId}

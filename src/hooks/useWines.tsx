@@ -5,7 +5,7 @@ interface Props {}
 
 const metadataQuery = graphql`
   query {
-    allContentfulDataWines(sort: { fields: createdAt, order: DESC }) {
+    allContentfulDataWines(sort: { fields: createdAt, order: ASC }) {
       edges {
         node {
           id

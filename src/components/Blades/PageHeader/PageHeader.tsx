@@ -14,12 +14,12 @@ const PageHeader: React.FC<Props> = ({ title, description, banner }) => {
       style={{
         backgroundImage: `url(${
           banner ||
-          "https://images.ctfassets.net/aj2hdpos2uzm/6khB4YAxKomf1hpK0itN4f/d8ae37a91334b3efb2db63c73e53552a/stock-photo-wine-cellar-with-a-row-of-barrels-austria-706026547.jpeg"
+          "http://images.ctfassets.net/aj2hdpos2uzm/37VYKAU6DrCkSnEF6mxzrI/d54c9c9f79df40dddabf773a5eed8e76/Banner2.jpeg"
         })`,
       }}
       className={`${styles.PageHeader} flex bg-secondary items-center`}
     >
-      <div className="h-full flex justify-center text-4xl items-center bg-opacity-70 transition-all duration-500 bg-black w-full">
+      <div className="h-full flex justify-center text-4xl items-center bg-opacity-50 transition-all duration-500 bg-black w-full">
         <Helmet title={title} defaultTitle="Tulia Wine" defer={false} />
 
         <div className="container mx-auto text-white">

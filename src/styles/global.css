@@ -20,3 +20,7 @@
 .font-cursive {
   font-family: "Adinekirnberg", "Great Vibes", sans-serif;
 }
+
+body {
+  overflow-x: hidden;
+}

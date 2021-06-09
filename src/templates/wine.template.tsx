@@ -49,23 +49,25 @@ const Wine: React.FC<Props> = ({ data }) => {
       <PageHeader title={wineData.wineName} />
       <WineTabs />
       <WineDisplay wine={wineData} />
-      <div className="w-full py-20">
-        <div className="container mx-auto">
-          <h4 className="font-serif text-secondary text-5xl text-center mb-8">
-            Gallery
-          </h4>
-          <div className="flex flex-wrap max-w-4xl mx-auto">
-            {wineData?.gallery?.map(item => {
-              const image = getImage(item)
-              return (
-                <div className="w-full sm:w-1/3 p-2 bg-gray-200">
-                  <GatsbyImage image={image} alt={item.description} />
-                </div>
-              )
-            })}
+      {!!wineData?.gallery?.length && (
+        <div className="w-full py-20">
+          <div className="container mx-auto">
+            <h4 className="font-serif text-secondary text-5xl text-center mb-8">
+              Gallery
+            </h4>
+            <div className="flex flex-wrap border-4 border-secondary max-w-4xl mx-auto p-2">
+              {wineData?.gallery?.map(item => {
+                const image = getImage(item)
+                return (
+                  <div className="w-full sm:w-1/3 p-2">
+                    <GatsbyImage image={image} alt={item.description} />
+                  </div>
+                )
+              })}
+            </div>
           </div>
         </div>
-      </div>
+      )}
     </Layout>
   )
 }

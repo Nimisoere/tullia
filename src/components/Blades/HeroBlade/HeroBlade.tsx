@@ -9,7 +9,7 @@ interface Props {
 const HeroBlade: React.FC<Props> = ({ blade }) => {
   return (
     <div
-      className={`flex items-center`}
+      className={`flex items-center relative`}
       style={{
         backgroundImage: `url(https:${blade.backgroundImage?.file?.url})`,
         backgroundRepeat: "no-repeat",
@@ -18,26 +18,28 @@ const HeroBlade: React.FC<Props> = ({ blade }) => {
         height: "70vh",
       }}
     >
-      <div className="flex items-center w-full h-full bg-black bg-opacity-70">
-        <div className="container mx-auto text-white">
-          <div className="max-w-md">
-            <h1 className="font-thin font-cursive text-secondary text-6xl mb-4">
+      <div className="absolute w-full bottom-0 left-0 bg-black bg-opacity-60 p-4">
+        <div className="container flex flex-wrap items-center mx-auto text-white">
+          <div className="flex-grow">
+            <h1 className="font-thin font-cursive text-secondary text-6xl mb-2">
               {blade.headline}
             </h1>
-            <div className="text-xl font-thin mb-4">
+            <div className="text-xl font-thin mb-2">
               {renderRichText(blade.copy)}
             </div>
-            <p className="text-sm mb-5">{blade.caption}</p>
-            {!!blade?.ctaPrimary && (
+          </div>
+          {!!blade?.ctaPrimary && (
+            <div>
               <Link
                 aria-label="Our wines"
                 to={blade?.ctaPrimary?.url}
-                className={`bg-${blade?.ctaPrimary?.buttonStyle?.toLowerCase()} hover:bg-opacity-90 p-4 text-lg inline-flex items-center justify-center`}
+                className={`bg-${blade?.ctaPrimary?.buttonStyle?.toLowerCase()} hover:bg-opacity-90 p-4 mb-2 text-lg inline-flex items-center justify-center`}
               >
                 {blade?.ctaPrimary?.caption}
               </Link>
-            )}
-          </div>
+              <p className="text-sm">{blade.caption}</p>
+            </div>
+          )}
         </div>
       </div>
     </div>

@@ -6,6 +6,7 @@ export const carouselFragment = graphql`
     contentful_id
     __typename
     slidesContentType
+    headline
     useSlider
     wrapperClassName
     itemsPerRow
@@ -15,6 +16,9 @@ export const carouselFragment = graphql`
       }
       ... on ContentfulBladeContactCard {
         ...contactCardFragment
+      }
+      ... on ContentfulBladeFeature {
+        ...featureFragment
       }
     }
   }

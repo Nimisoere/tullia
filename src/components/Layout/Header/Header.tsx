@@ -22,7 +22,7 @@ const Header: React.FC<Props> = ({ headerNavData }) => {
           <StaticImage
             src="../../../images/logo.png"
             alt="Tulia"
-            layout="fixed"
+            layout="constrained"
             height={60}
             placeholder="blurred"
           />
@@ -43,7 +43,7 @@ const Header: React.FC<Props> = ({ headerNavData }) => {
           }}
           className={`${
             showMenu ? "flex" : "hidden"
-          } h-full sm:flex flex-col fixed 
+          } h-full sm:flex flex-col fixed  z-40
           left-0 top-0 bg-primary sm:bg-white text-white sm:text-primary sm:relative sm:flex-row w-full sm:w-auto flex-wrap sm:flex-nowrap text-lg items-stretch justify-center`}
         >
           <button

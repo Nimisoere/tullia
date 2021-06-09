@@ -5,6 +5,7 @@ import ContactCard from "../ContactCard/ContactCard"
 import HeroBlade from "../HeroBlade/HeroBlade"
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
+import Feature from "../Feature/Feature"
 
 interface Props {
   blade: any
@@ -26,13 +27,15 @@ const Carousel: React.FC<Props> = ({ blade }) => {
     <div
       key={slide.contentfulId}
       className={`${
-        !blade.useSlide && `w-full sm:w-1/${blade.itemsPerRow} mb-10 sm:mb-0`
+        !blade.useSlider && `w-full sm:w-1/${blade.itemsPerRow} mb-10 sm:mb-0`
       }`}
     >
       {slide.__typename === "ContentfulBladeContactCard" ? (
         <ContactCard slide={slide} />
       ) : slide.__typename === "ContentfulBladeHero" ? (
         <HeroBlade blade={slide} />
+      ) : slide.__typename === "ContentfulBladeFeature" ? (
+        <Feature blade={slide} />
       ) : (
         <React.Fragment key={slide.contentfulId}></React.Fragment>
       )}
@@ -47,9 +50,18 @@ const Carousel: React.FC<Props> = ({ blade }) => {
     )
   }
   return (
-    <div className={`${blade.wrapperClassName?.join(" ")} flex flex-wrap`}>
-      {Slides}
-    </div>
+    <>
+      <div className="w-full pt-10">
+        <div className="mx-auto container">
+          <h4 className="font-serif text-secondary text-5xl text-center mb-8">
+            {blade.headline}
+          </h4>
+        </div>
+      </div>
+      <div className={`${blade.wrapperClassName?.join(" ")} flex flex-wrap`}>
+        {Slides}
+      </div>
+    </>
   )
 }
 

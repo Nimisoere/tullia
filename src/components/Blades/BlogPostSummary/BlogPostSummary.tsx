@@ -1,4 +1,5 @@
 import { Link } from "gatsby"
+import { GatsbyImage } from "gatsby-plugin-image"
 import React from "react"
 
 interface Props {
@@ -8,13 +9,12 @@ interface Props {
 const BlogPostSummary: React.FC<Props> = ({ post }) => {
   return (
     <div className="bg-gray-200 w-full flex flex-wrap mb-10 items-stretch">
-      <div
-        style={{
-          backgroundImage: `url(${post?.thumbnail?.file?.url})`,
-          backgroundSize: "cover",
-        }}
-        className="w-full h-16 bg-gray-400 sm:h-auto sm:w-1/4"
-      />
+      <div className="w-full flex h-40 sm:h-auto items-stretch  bg-gray-100 sm:w-1/4">
+        <GatsbyImage
+          alt={post?.title}
+          image={post?.thumbnail?.constrainedGatsbyImage}
+        />
+      </div>
       <div className="p-8 w-full sm:w-3/4 text-center">
         <p className="capitalize text-2xl font-serif text-secondary">
           {post?.category}

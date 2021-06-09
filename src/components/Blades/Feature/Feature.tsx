@@ -1,6 +1,7 @@
 import { renderRichText } from "gatsby-source-contentful/rich-text"
 import React from "react"
 import { options } from "../../../templates/blog.template"
+import { GatsbyImage } from "gatsby-plugin-image"
 
 interface Props {
   blade: any
@@ -10,10 +11,9 @@ const Feature = ({ blade }: Props) => {
   return (
     <div className="w-full p-4 h-full flex flex-col">
       <div className="w-full flex justify-center h-56 bg-secondary">
-        <img
-          src={blade.image?.file?.url}
-          className="h-full max-w-full"
+        <GatsbyImage
           alt={blade.headline}
+          image={blade.image.constrainedGatsbyImage}
         />
       </div>
       <div className="bg-gray-100 p-4 flex text-center flex-col flex-grow">

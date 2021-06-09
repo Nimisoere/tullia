@@ -14,9 +14,7 @@ export const heroFragment = graphql`
       ...assetFragment
     }
     ctaPrimary {
-      ... on ContentfulElementCallToAction {
-        ...ctaFragment
-      }
+      ...ctaFragment
     }
   }
 `

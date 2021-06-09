@@ -23,7 +23,7 @@ const Footer: React.FC<Props> = ({ footerNavData, socialMediaMavData }) => {
             <StaticImage
               src="../../../images/logo.png"
               alt="Tulia"
-              layout="fixed"
+              layout="constrained"
               height={40}
               placeholder="blurred"
             />

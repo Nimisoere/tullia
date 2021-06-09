@@ -7,9 +7,7 @@ export const navigationFragment = graphql`
     __typename
     navVariant
     navigationItems {
-      ... on ContentfulNavNavigationItem {
-        ...navigationItemFragment
-      }
+      ...navigationItemFragment
     }
   }
 `

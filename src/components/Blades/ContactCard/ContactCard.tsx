@@ -1,3 +1,4 @@
+import { GatsbyImage } from "gatsby-plugin-image"
 import React from "react"
 
 interface Props {
@@ -8,13 +9,12 @@ const ContactCard = ({ slide }: Props) => {
   return (
     <div className="w-full h-full sm:p-4">
       <div className="bg-primary h-full w-full flex flex-wrap  items-stretch text-white">
-        <div
-          style={{
-            backgroundImage: `url(https:${slide?.image?.file?.url})`,
-            backgroundSize: "cover",
-          }}
-          className="w-full h-16 sm:h-auto sm:w-1/4"
-        />
+        <div className="w-full h-40 flex items-stretch sm:h-auto sm:w-1/4">
+          <GatsbyImage
+            alt={slide?.title}
+            image={slide?.image?.constrainedGatsbyImage}
+          />
+        </div>
         <div className="p-8 w-full sm:w-3/4">
           <h4 className="mb-4 font-serif text-xl text-secondary">
             {slide.title}

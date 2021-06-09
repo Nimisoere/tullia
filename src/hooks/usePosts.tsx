@@ -17,9 +17,7 @@ const metadataQuery = graphql`
             summary
           }
           thumbnail {
-            file {
-              url
-            }
+            ...assetFragment
           }
         }
       }

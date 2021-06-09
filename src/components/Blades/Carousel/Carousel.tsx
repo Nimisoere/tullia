@@ -6,6 +6,7 @@ import HeroBlade from "../HeroBlade/HeroBlade"
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
 import Feature from "../Feature/Feature"
+import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io"
 
 interface Props {
   blade: any
@@ -17,10 +18,14 @@ const Carousel: React.FC<Props> = ({ blade }) => {
     infinite: true,
     lazyLoad: true,
     speed: 1000,
+    fade: true,
+    adaptiveHeight: true,
     autoplaySpeed: 10000,
     autoplay: true,
     slidesToShow: 1,
     slidesToScroll: 1,
+    nextArrow: <IoIosArrowForward />,
+    prevArrow: <IoIosArrowBack />,
   }
 
   const Slides = blade.slides?.map((slide: any, index: number) => (

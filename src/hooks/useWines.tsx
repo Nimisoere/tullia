@@ -17,16 +17,7 @@ const metadataQuery = graphql`
             summary
           }
           thumbnail {
-            ... on ContentfulAsset {
-              fixed {
-                src
-              }
-              gatsbyImageData(
-                height: 100
-                placeholder: BLURRED
-                formats: [AUTO, WEBP]
-              )
-            }
+            ...assetFragment
           }
         }
       }

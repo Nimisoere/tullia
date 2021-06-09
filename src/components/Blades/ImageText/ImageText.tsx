@@ -1,5 +1,5 @@
 import React from "react"
-import { StaticImage } from "gatsby-plugin-image"
+import { GatsbyImage } from "gatsby-plugin-image"
 import { renderRichText } from "gatsby-source-contentful/rich-text"
 import { options } from "../../../templates/blog.template"
 
@@ -17,11 +17,9 @@ const ImageText: React.FC<Props> = ({ blade }) => {
       >
         <div className="w-full sm:w-1/2 flex justify-center">
           <div className="max-w-xl w-full mx-auto px-2 mb-10">
-            <img
-              src={blade?.image?.file?.url}
-              alt="Tulia"
-              className="w-full"
-              placeholder="blurred"
+            <GatsbyImage
+              alt={blade?.headline}
+              image={blade?.image?.constrainedGatsbyImage}
             />
           </div>
         </div>

@@ -2,6 +2,7 @@ import React from "react"
 import ReactMarkdown from "react-markdown"
 import { renderRichText } from "gatsby-source-contentful/rich-text"
 import { options } from "../../../templates/blog.template"
+import { GatsbyImage } from "gatsby-plugin-image"
 
 interface Props {
   wine: any
@@ -13,7 +14,10 @@ const WineDisplay: React.FC<Props> = ({ wine }) => {
     <div className="w-full">
       <div className="container flex flex-wrap mx-auto py-20">
         <div className="w-full mb-10 sm:mb-0 sm:w-1/3 flex justify-center sm:justify-end items-center">
-          <img src={wine?.thumbnail?.fixed?.src} alt={wine?.wineName} />
+          <GatsbyImage
+            alt={wine?.wineName}
+            image={wine?.thumbnail?.constrainedGatsbyImage}
+          />
         </div>
         <div className="sm:px-10 w-full sm:w-2/3">
           <div className="w-full max-w-lg shadow bg-secondary p-8">

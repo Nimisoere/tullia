@@ -57,10 +57,12 @@ const Wine: React.FC<Props> = ({ data }) => {
             </h4>
             <div className="flex flex-wrap border-4 border-secondary max-w-4xl mx-auto p-2">
               {wineData?.gallery?.map(item => {
-                const image = getImage(item)
                 return (
                   <div className="w-full sm:w-1/3 p-2">
-                    <GatsbyImage image={image} alt={item.description} />
+                    <GatsbyImage
+                      image={item?.constrainedGatsbyImage}
+                      alt={item.description}
+                    />
                   </div>
                 )
               })}

@@ -8,9 +8,7 @@ export const contactFormFragment = graphql`
     formId
     formTitle
     primaryCta {
-      ... on ContentfulElementCallToAction {
-        ...ctaFragment
-      }
+      ...ctaFragment
     }
   }
 `

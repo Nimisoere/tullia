@@ -14,22 +14,10 @@ export const wineFragment = graphql`
       summary
     }
     gallery {
-      ... on ContentfulAsset {
-        fixed {
-          src
-        }
-        title
-        description
-        gatsbyImageData(width: 480, placeholder: BLURRED, formats: [AUTO, WEBP])
-      }
+      ...assetFragment
     }
     thumbnail {
-      ... on ContentfulAsset {
-        fixed {
-          src
-        }
-        gatsbyImageData(width: 480, placeholder: BLURRED, formats: [AUTO, WEBP])
-      }
+      ...assetFragment
     }
   }
 `

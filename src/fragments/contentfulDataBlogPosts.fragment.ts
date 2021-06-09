@@ -9,17 +9,7 @@ export const blogPostFragment = graphql`
     blogPost {
       raw
       references {
-        ... on ContentfulAsset {
-          __typename
-          contentful_id
-          title
-          description
-          gatsbyImageData(
-            width: 480
-            placeholder: BLURRED
-            formats: [AUTO, WEBP]
-          )
-        }
+        ...assetFragment
       }
     }
   }

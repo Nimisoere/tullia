@@ -1,6 +1,6 @@
 import React from "react"
 import { IoIosMenu } from "react-icons/io"
-import { getImage } from "gatsby-plugin-image"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { Link } from "gatsby"
 import { useWines } from "../../../hooks/useWines"
 
@@ -31,7 +31,6 @@ const WineTabs: React.FC<Props> = props => {
         >
           <nav className="flex flex-wrap w-full">
             {wines?.allContentfulDataWines?.edges?.map(edge => {
-              const image = getImage(edge.node.thumbnail)
               return (
                 <Link
                   key={edge?.node?.contentful_id}
@@ -39,11 +38,13 @@ const WineTabs: React.FC<Props> = props => {
                   activeClassName="border-secondary"
                   className="p-4 hover:bg-gray-200 bg-transparent font-light text-lg w-full sm:w-1/5 flex sm:flex-col items-center  border-b-4 border-primary"
                 >
-                  <img
-                    className="h-20"
-                    src={edge?.node?.thumbnail?.fixed?.src}
+                  <GatsbyImage
                     alt={edge?.node?.wineName}
+                    className="h-24"
+                    objectFit="contain"
+                    image={edge?.node?.thumbnail?.constrainedGatsbyImage}
                   />
+
                   <span className="ml-4 font-serif">
                     {edge?.node?.wineName}
                   </span>

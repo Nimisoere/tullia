@@ -6,10 +6,38 @@ import HeroBlade from "../HeroBlade/HeroBlade"
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
 import Feature from "../Feature/Feature"
-import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io"
+import { BsArrowLeft, BsArrowRight } from "react-icons/bs"
 
 interface Props {
   blade: any
+}
+
+const SampleNextArrow = props => {
+  const { onClick } = props
+  return (
+    <button
+      className="absolute right-0 sm:right-10 text-white z-10 text-3xl transition-all transform p-2 bg-secondary bg-opacity-40 hover:bg-opacity-75 top-1/3"
+      type="button"
+      onClick={onClick}
+      aria-label="next"
+    >
+      <BsArrowRight className="hover:translate-x-1 transition-all transform" />
+    </button>
+  )
+}
+
+const SamplePrevArrow = props => {
+  const { className, style, onClick } = props
+  return (
+    <button
+      className="absolute left-0 sm:left-10 text-white z-10 text-3xl transition-all transform p-2 bg-secondary bg-opacity-60 hover:bg-opacity-75 top-1/3"
+      type="button"
+      onClick={onClick}
+      aria-label="next"
+    >
+      <BsArrowLeft className="transition-all transform hover:-translate-x-1 " />
+    </button>
+  )
 }
 
 const Carousel: React.FC<Props> = ({ blade }) => {
@@ -20,12 +48,12 @@ const Carousel: React.FC<Props> = ({ blade }) => {
     speed: 1000,
     fade: true,
     adaptiveHeight: true,
-    autoplaySpeed: 10000,
+    autoplaySpeed: 5000,
     autoplay: true,
     slidesToShow: 1,
     slidesToScroll: 1,
-    nextArrow: <IoIosArrowForward />,
-    prevArrow: <IoIosArrowBack />,
+    nextArrow: <SampleNextArrow />,
+    prevArrow: <SamplePrevArrow />,
   }
 
   const Slides = blade.slides?.map((slide: any, index: number) => (

@@ -14,8 +14,8 @@ const Carousel: React.FC<Props> = ({ blade }) => {
   const settings = {
     dots: true,
     infinite: true,
-    speed: 2000,
-    autoplaySpeed: 2000,
+    speed: 1000,
+    autoplaySpeed: 10000,
     autoplay: true,
     slidesToShow: blade.slides[0].__typename === "ContentfulBladeHero" ? 1 : 3,
     slidesToScroll: 1,
@@ -31,6 +31,7 @@ const Carousel: React.FC<Props> = ({ blade }) => {
       },
     ],
   }
+
   const Slides = blade.slides?.map((slide: any, index: number) => {
     if (slide.__typename === "ContentfulBladeContactCard") {
       return <ContactCard key={slide.contentfulId} slide={slide} />

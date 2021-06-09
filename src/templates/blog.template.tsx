@@ -68,7 +68,10 @@ export const options = {
       const image = getImage(node.data.target)
       return (
         <div className="my-8">
-          <GatsbyImage image={image} alt={node.data.target.description} />
+          <GatsbyImage
+            image={node.data.target?.constrainedGatsbyImage}
+            alt={node.data.target.description}
+          />
         </div>
       )
     },

@@ -10,7 +10,7 @@ const QuickLinks = (props: Props) => {
     edge => edge?.node?.showQuickLinks
   )
   return (
-    <nav className="flex flex-col max-w-sm mb-8">
+    <nav className="flex flex-col max-w-sm mb-8 sm:sticky sm:top-28">
       <h4 className="font-medium font-serif text-xl mb-4">Quick Links</h4>
 
       {quickLinks?.map(link => (

@@ -13,7 +13,7 @@ const Header: React.FC<Props> = ({ headerNavData }) => {
   const [showMenu, setShowMenu] = React.useState<boolean>(false)
 
   return (
-    <div className="h-20 shadow sticky top-0 z-10 w-full flex items-stretch text-primary bg-white">
+    <div className="h-20 shadow sticky top-0 z-40 w-full flex items-stretch text-primary bg-white">
       <div className="container items-stretch flex flex-wrap relative justify-between mx-auto">
         <Link
           to="/"

@@ -17,105 +17,25 @@ export const query = graphql`
       contentful_id: { eq: "7eYCIoBsSzSIXvgk2TNi9A" }
     ) {
       ... on ContentfulNavNavigation {
-        id
-        contentful_id
-        __typename
-        navVariant
-        navigationItems {
-          ... on ContentfulNavNavigationItem {
-            __typename
-            title
-            itemVariant
-            navigationImage {
-              file {
-                url
-              }
-            }
-            icon
-            mainLink {
-              linkText
-              linkUrl
-              openInNewWindow
-            }
-          }
-        }
+        ...navigationFragment
       }
     }
     footer: contentfulNavNavigation(
       contentful_id: { eq: "3dY9doPrL5ivj6iH9xJ0nw" }
     ) {
       ... on ContentfulNavNavigation {
-        id
-        contentful_id
-        __typename
-        navVariant
-        navigationItems {
-          ... on ContentfulNavNavigationItem {
-            __typename
-            title
-            itemVariant
-            navigationImage {
-              file {
-                url
-              }
-            }
-            icon
-            mainLink {
-              linkText
-              linkUrl
-              openInNewWindow
-            }
-          }
-        }
+        ...navigationFragment
       }
     }
     socialMedia: contentfulNavNavigation(
       contentful_id: { eq: "5tdxvnTJ98vy7R7BkgF9au" }
     ) {
       ... on ContentfulNavNavigation {
-        id
-        contentful_id
-        __typename
-        navVariant
-        navigationItems {
-          ... on ContentfulNavNavigationItem {
-            __typename
-            title
-            itemVariant
-            navigationImage {
-              file {
-                url
-              }
-            }
-            icon
-            mainLink {
-              linkText
-              linkUrl
-              openInNewWindow
-            }
-          }
-        }
+        ...navigationFragment
       }
     }
     contentfulDataBlogPosts(slug: { eq: $slug }) {
-      title
-      createdAt(fromNow: true)
-      blogPost {
-        raw
-        references {
-          ... on ContentfulAsset {
-            __typename
-            contentful_id
-            title
-            description
-            gatsbyImageData(
-              width: 480
-              placeholder: BLURRED
-              formats: [AUTO, WEBP]
-            )
-          }
-        }
-      }
+      ...blogPostFragment
     }
   }
 `

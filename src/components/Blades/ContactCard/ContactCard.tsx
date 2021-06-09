@@ -6,8 +6,8 @@ interface Props {
 
 const ContactCard = ({ slide }: Props) => {
   return (
-    <div className="w-full sm:p-4">
-      <div className="bg-primary h-full w-full flex flex-wrap mb-10 sm:mb-0 items-stretch text-white">
+    <div className="w-full h-full sm:p-4">
+      <div className="bg-primary h-full w-full flex flex-wrap  items-stretch text-white">
         <div
           style={{
             backgroundImage: `url(https:${slide?.image?.file?.url})`,

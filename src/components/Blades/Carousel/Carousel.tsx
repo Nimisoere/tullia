@@ -14,34 +14,43 @@ const Carousel: React.FC<Props> = ({ blade }) => {
   const settings = {
     dots: true,
     infinite: true,
+    lazyLoad: true,
     speed: 1000,
     autoplaySpeed: 10000,
     autoplay: true,
-    slidesToShow: blade.slides[0].__typename === "ContentfulBladeHero" ? 1 : 3,
+    slidesToShow: 1,
     slidesToScroll: 1,
-    responsive: [
-      {
-        breakpoint: 640,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          infinite: true,
-          dots: true,
-        },
-      },
-    ],
   }
 
-  const Slides = blade.slides?.map((slide: any, index: number) => {
-    if (slide.__typename === "ContentfulBladeContactCard") {
-      return <ContactCard key={slide.contentfulId} slide={slide} />
-    }
-    if (slide.__typename === "ContentfulBladeHero") {
-      return <HeroBlade key={slide.contentfulId} blade={slide} />
-    }
-    return <React.Fragment key={slide.contentfulId}></React.Fragment>
-  })
-  return <Slider {...settings}>{Slides}</Slider>
+  const Slides = blade.slides?.map((slide: any, index: number) => (
+    <div
+      key={slide.contentfulId}
+      className={`${
+        !blade.useSlide && `w-full sm:w-1/${blade.itemsPerRow} mb-10 sm:mb-0`
+      }`}
+    >
+      {slide.__typename === "ContentfulBladeContactCard" ? (
+        <ContactCard slide={slide} />
+      ) : slide.__typename === "ContentfulBladeHero" ? (
+        <HeroBlade blade={slide} />
+      ) : (
+        <React.Fragment key={slide.contentfulId}></React.Fragment>
+      )}
+    </div>
+  ))
+
+  if (blade.useSlider) {
+    return (
+      <div className={blade.wrapperClassName?.join(" ")}>
+        <Slider {...settings}>{Slides}</Slider>
+      </div>
+    )
+  }
+  return (
+    <div className={`${blade.wrapperClassName?.join(" ")} flex flex-wrap`}>
+      {Slides}
+    </div>
+  )
 }
 
 export default Carousel

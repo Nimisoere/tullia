@@ -11,7 +11,7 @@ const WineTabs: React.FC<Props> = props => {
   const [showMenu, setShowMenu] = React.useState<boolean>(false)
 
   return (
-    <div className="w-full">
+    <div className="w-full z-10 sticky top-20">
       <div className="bg-gray-100 text-primary">
         <button
           onClick={() => {

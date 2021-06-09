@@ -15,8 +15,8 @@ const ImageText: React.FC<Props> = ({ blade }) => {
           blade?.imagePosition === "Right" ? "flex-row-reverse" : "flex-row"
         } flex flex-wrap mx-auto`}
       >
-        <div className="w-full sm:w-1/2 flex  justify-center">
-          <div className="max-w-lg mx-auto px-8 mb-10">
+        <div className="w-full sm:w-1/2 flex justify-center">
+          <div className="max-w-xl w-full mx-auto px-2 mb-10">
             <img
               src={blade?.image?.fixed?.src}
               alt="Tulia"

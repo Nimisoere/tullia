@@ -20,7 +20,7 @@ const WineDisplay: React.FC<Props> = ({ wine }) => {
             }}
             objectFit="contain"
             alt={wine?.wineName}
-            image={wine?.thumbnail?.constrainedGatsbyImage}
+            image={wine?.image?.constrainedGatsbyImage}
           />
         </div>
         <div className="sm:px-10 w-full sm:w-2/3">

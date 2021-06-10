@@ -16,6 +16,9 @@ export const wineFragment = graphql`
     gallery {
       ...assetFragment
     }
+    image {
+      ...assetFragment
+    }
     thumbnail {
       ...assetFragment
     }

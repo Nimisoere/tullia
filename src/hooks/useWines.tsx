@@ -16,6 +16,9 @@ const metadataQuery = graphql`
           summary {
             summary
           }
+          image {
+            ...assetFragment
+          }
           thumbnail {
             ...assetFragment
           }

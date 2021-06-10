@@ -32,7 +32,7 @@ const WineCard = ({ wine, bottleHeight }: Props) => {
             {wine?.wineCategory}
           </p>
           <ReactMarkdown
-            className="font-light flex-grow text-lg py-4"
+            className="font-light flex-grow text-xl py-4"
             children={wine?.summary?.summary}
           />
           <Link className="flex items-center underline mt-6" to={wine?.slug}>

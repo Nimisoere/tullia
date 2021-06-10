@@ -15,7 +15,7 @@ const WineDisplay: React.FC<Props> = ({ wine }) => {
         <WineCard wine={wine} />
       </div>
       <div className="w-full py-20 bg-gray-100">
-        <div className="container mx-auto max-w-2xl">
+        <div className="container mx-auto text-xl max-w-2xl">
           {document && renderRichText(document, options)}
         </div>
       </div>

@@ -11,7 +11,7 @@ interface Props {
 
 const PageHeader: React.FC<Props> = ({ title, description, image, banner }) => {
   const defaultBanner =
-    "http://images.ctfassets.net/aj2hdpos2uzm/37VYKAU6DrCkSnEF6mxzrI/d54c9c9f79df40dddabf773a5eed8e76/Banner2.jpeg"
+    "https://images.ctfassets.net/aj2hdpos2uzm/37VYKAU6DrCkSnEF6mxzrI/d54c9c9f79df40dddabf773a5eed8e76/Banner2.jpeg"
 
   return (
     <div className="flex flex-col items-center justify-center">

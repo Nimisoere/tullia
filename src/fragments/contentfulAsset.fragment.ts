@@ -13,13 +13,19 @@ export const assetFragment = graphql`
       contentType
     }
     constrainedGatsbyImage: gatsbyImageData(
+      quality: 100
       layout: CONSTRAINED
       placeholder: BLURRED
     )
-    fixedGatsbyImage: gatsbyImageData(layout: FIXED, placeholder: BLURRED)
+    fixedGatsbyImage: gatsbyImageData(
+      layout: FIXED
+      quality: 100
+      placeholder: BLURRED
+    )
     fullWidthGatsbyImage: gatsbyImageData(
       layout: FULL_WIDTH
       placeholder: BLURRED
+      quality: 100
     )
     fluid {
       base64

@@ -24,7 +24,7 @@ const ImageText: React.FC<Props> = ({ blade }) => {
           </div>
         </div>
         <div className="w-full sm:w-1/2 font-light">
-          <div className="max-w-lg">
+          <div className="max-w-lg text-xl">
             <h2 className="font-serif text-secondary text-5xl mb-4">
               {blade.headline}
             </h2>

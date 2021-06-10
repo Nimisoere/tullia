@@ -1,6 +1,7 @@
 import { graphql } from "gatsby"
 import { navigate } from "gatsby-link"
 import React from "react"
+import ImageText from "../components/Blades/ImageText/ImageText"
 import PageHeader from "../components/Blades/PageHeader/PageHeader"
 import WineTabs from "../components/Blades/WineTabs/WineTabs"
 import Layout from "../components/Layout/Layout"
@@ -26,6 +27,13 @@ export const query = graphql`
         ...navigationFragment
       }
     }
+    winebanner: contentfulBladeImageText(
+      contentful_id: { eq: "4VgIbOzg9egS6pc6aihZgu" }
+    ) {
+      ... on ContentfulBladeImageText {
+        ...imageTextFragment
+      }
+    }
     socialMedia: contentfulNavNavigation(
       contentful_id: { eq: "5tdxvnTJ98vy7R7BkgF9au" }
     ) {
@@ -37,10 +45,6 @@ export const query = graphql`
 `
 
 const Wines: React.FC<Props> = ({ data }) => {
-  const wines = useWines()
-  React.useEffect(() => {
-    navigate(`/wines/${wines?.allContentfulDataWines?.edges[0]?.node?.slug}`)
-  }, [wines?.allContentfulDataWines?.edges[0]?.node?.slug])
   return (
     <Layout
       headerNavData={data.header}
@@ -49,6 +53,8 @@ const Wines: React.FC<Props> = ({ data }) => {
     >
       <PageHeader title="Our Wines" description="5 Distinct Flavors" />
       <WineTabs />
+
+      <ImageText blade={data.winebanner} />
     </Layout>
   )
 }

@@ -9,19 +9,17 @@ interface Props {
 
 const HeroBlade: React.FC<Props> = ({ blade }) => {
   return (
-    <div className={`flex items-center relative`}>
-      <GatsbyImage
-        style={{
-          height: "70vh",
-          minHeight: 553,
-        }}
-        image={blade.backgroundImage?.fixedGatsbyImage}
-        alt={blade.headline}
-      />
-      <div className="absolute w-full bottom-0 left-0 bg-black bg-opacity-75 p-4">
+    <div className="flex items-center bg-opacity-20 flex-wrap relative">
+      <div className="w-full relative">
+        <GatsbyImage
+          image={blade.backgroundImage?.constrainedGatsbyImage}
+          alt={blade.headline}
+        />
+      </div>
+      <div className="w-full bg-secondary py-8">
         <div className="container flex flex-wrap items-center mx-auto text-white">
           <div className="flex-grow">
-            <h1 className="font-thin font-cursive leading-10 text-secondary text-6xl mb-2">
+            <h1 className="font-thin font-cursive text-primary leading-10 text-6xl mb-2">
               {blade.headline}
             </h1>
             <div className="text-xl font-thin mb-2">
@@ -33,7 +31,7 @@ const HeroBlade: React.FC<Props> = ({ blade }) => {
               <Link
                 aria-label="Our wines"
                 to={blade?.ctaPrimary?.url}
-                className={`bg-${blade?.ctaPrimary?.buttonStyle?.toLowerCase()} hover:bg-opacity-90 p-4 mb-2 text-lg inline-flex items-center justify-center`}
+                className={`bg-primary hover:bg-opacity-90 p-4 mb-2 text-lg inline-flex items-center justify-center`}
               >
                 {blade?.ctaPrimary?.caption}
               </Link>

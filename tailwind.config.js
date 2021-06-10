@@ -10,6 +10,7 @@ module.exports = {
         sans: ['Times-LT', 'sans-serif'],
         serif: ['Bodoni Moda', 'sans-serif'],
       },
+
       colors: {
         primary: '#131313',
         secondary: '#C79B4D'
@@ -17,7 +18,9 @@ module.exports = {
     },
   },
   variants: {
-    extend: {},
+    extend: {
+      display: ['group-hover']
+    },
   },
   plugins: [],
 }

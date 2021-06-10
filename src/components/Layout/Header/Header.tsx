@@ -14,10 +14,10 @@ const Header: React.FC<Props> = ({ headerNavData }) => {
 
   return (
     <div className="h-20 shadow sticky top-0 z-40 w-full flex items-stretch text-primary bg-white">
-      <div className="container items-stretch flex flex-wrap relative justify-between mx-auto">
+      <div className="container items-stretch flex relative justify-between mx-auto">
         <Link
           to="/"
-          className="flex flex-wrap bg-white sm:px-4 items-center justify-center"
+          className="flex bg-white sm:px-4 items-center justify-center"
         >
           <StaticImage
             src="../../../images/logo.png"

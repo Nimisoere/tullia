@@ -52,6 +52,7 @@ const Page: React.FC<Props> = ({ data }) => {
           title={page.pageTitle}
           description={page?.pageDescription?.pageDescription}
           banner={page?.pageHeaderBanner?.file?.url}
+          image={page?.pageHeaderBanner?.constrainedGatsbyImage}
         />
       )}
       {page?.showQuickLinks ? (

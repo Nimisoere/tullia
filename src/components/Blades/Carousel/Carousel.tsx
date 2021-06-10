@@ -52,8 +52,6 @@ const Carousel: React.FC<Props> = ({ blade }) => {
     autoplay: true,
     slidesToShow: 1,
     slidesToScroll: 1,
-    nextArrow: <SampleNextArrow />,
-    prevArrow: <SamplePrevArrow />,
   }
 
   const Slides = blade.slides?.map((slide: any, index: number) => (

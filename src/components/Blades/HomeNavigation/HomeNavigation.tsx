@@ -1,5 +1,7 @@
 import { Link } from "gatsby"
+import { GatsbyImage } from "gatsby-plugin-image"
 import React from "react"
+import { BsArrowRight } from "react-icons/bs"
 
 interface Props {
   blade: any
@@ -7,22 +9,34 @@ interface Props {
 
 const HomeNavigation = ({ blade }) => {
   return (
-    <div className="w-full flex flex-wrap mb-2">
-      {blade?.navigationItems?.map(item => (
-        <Link
-          key={item.contentfulId}
-          to={`${item?.mainLink?.linkUrl}`}
-          style={{
-            backgroundImage: `url(${item.navigationImage?.file?.url})`,
-            backgroundPosition: "50%",
-          }}
-          className={`bg-primary border-4 border-white bg-cover text-white text-2xl h-64 w-full sm:w-1/3 flex items-center justify-center`}
-        >
-          <span className="h-full flex justify-center font-serif text-4xl items-center bg-opacity-40 hover:bg-opacity-75 transition-all duration-500 bg-black w-full">
-            {item?.title}
-          </span>
-        </Link>
-      ))}
+    <div className="w-full bg-gray-100">
+      <div className="container mx-auto flex flex-wrap">
+        {blade?.navigationItems?.map(item => (
+          <Link
+            key={item.contentfulId}
+            to={`${item?.mainLink?.linkUrl}`}
+            className="w-full group sm:w-1/3 p-4"
+          >
+            <div className="flex flex-col shadow group bg-white relative">
+              <div className="absolute top-0 left-0 transition-all transform items-center  justify-center ease-in duration-500 group-hover:flex z-10 hidden w-full h-full bg-white bg-opacity-50">
+                <div className="bg-secondary hover:bg-primary text-white  py-3 px-8 flex justify-between items-center text-lg">
+                  Explore
+                  <BsArrowRight className="ml-4 hover:translate-x-1 transition-all transform" />
+                </div>
+              </div>
+              <div className="w-full flex justify-center h-56 bg-white">
+                <GatsbyImage
+                  alt={item.title}
+                  image={item.navigationImage.constrainedGatsbyImage}
+                />
+              </div>
+              <span className="p-4 text-center text-2xl text-secondary">
+                {item?.title}
+              </span>
+            </div>
+          </Link>
+        ))}
+      </div>
     </div>
   )
 }

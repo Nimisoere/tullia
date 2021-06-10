@@ -33,7 +33,7 @@ const Footer: React.FC<Props> = ({ footerNavData, socialMediaMavData }) => {
           <nav className="flex flex-wrap items-center">
             {footerNavData?.navigationItems?.map(item => (
               <Link
-                key={item.contentfulId}
+                key={item.contentful_id}
                 className="p-4 text-lg"
                 to={`${item?.mainLink?.linkUrl}`}
               >
@@ -48,7 +48,7 @@ const Footer: React.FC<Props> = ({ footerNavData, socialMediaMavData }) => {
                 return (
                   <a
                     className="p-4 text-lg"
-                    key={item.contentfulId}
+                    key={item.contentful_id}
                     href={item?.mainLink?.linkUrl}
                     target={item?.mainLink?.openInNewWindow && "_blank"}
                   >

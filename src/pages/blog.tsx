@@ -43,7 +43,11 @@ const Blog: React.FC<Props> = ({ data }) => {
       footerNavData={data.footer}
       socialMediaMavData={data.socialMedia}
     >
-      <PageHeader title="Blog Posts" description="What we have to say" />
+      <PageHeader
+        title="Blog Posts"
+        description="What we have to say"
+        banner="https://images.ctfassets.net/aj2hdpos2uzm/37VYKAU6DrCkSnEF6mxzrI/d54c9c9f79df40dddabf773a5eed8e76/Banner2.jpeg"
+      />
       <div className="container flex flex-wrap mx-auto py-20">
         <div className="w-full mx-auto max-w-3xl flex flex-col flex-wrap mb-10">
           {postsData?.allContentfulDataBlogPosts?.edges?.map(post => (

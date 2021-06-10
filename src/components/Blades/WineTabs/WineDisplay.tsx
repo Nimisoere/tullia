@@ -1,8 +1,7 @@
 import React from "react"
-import ReactMarkdown from "react-markdown"
 import { renderRichText } from "gatsby-source-contentful/rich-text"
 import { options } from "../../../templates/blog.template"
-import { GatsbyImage } from "gatsby-plugin-image"
+import WineCard from "./WineCard"
 
 interface Props {
   wine: any
@@ -12,33 +11,9 @@ const WineDisplay: React.FC<Props> = ({ wine }) => {
   const document = wine?.description
   return (
     <div className="w-full">
-      <div className="container flex flex-wrap mx-auto py-20">
-        <div className="w-full mb-10 sm:mb-0 md:w-1/5 flex justify-center sm:justify-end items-center">
-          <GatsbyImage
-            style={{
-              height: 450,
-            }}
-            objectFit="contain"
-            alt={wine?.wineName}
-            image={wine?.image?.constrainedGatsbyImage}
-          />
-        </div>
-        <div className="sm:px-10 w-full md:w-4/5">
-          <div className="w-full max-w-lg shadow h-full flex flex-col justify-center bg-secondary p-8">
-            <h4 className="font-light font-serif capitalize mb-4 flex items-center text-3xl">
-              {wine?.wineName}{" "}
-            </h4>
-            <p className="font-thin text-4xl font-cursive capitalize">
-              {wine?.wineCategory}
-            </p>
-            <ReactMarkdown
-              className="font-light py-4"
-              children={wine?.summary?.summary}
-            />
-          </div>
-        </div>
+      <div className="container mx-auto py-20">
+        <WineCard wine={wine} />
       </div>
-
       <div className="w-full py-20 bg-gray-100">
         <div className="container mx-auto max-w-2xl">
           {document && renderRichText(document, options)}

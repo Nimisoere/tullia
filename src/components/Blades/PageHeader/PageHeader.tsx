@@ -10,15 +10,12 @@ interface Props {
 }
 
 const PageHeader: React.FC<Props> = ({ title, description, image, banner }) => {
-  const defaultBanner =
-    "https://images.ctfassets.net/aj2hdpos2uzm/37VYKAU6DrCkSnEF6mxzrI/d54c9c9f79df40dddabf773a5eed8e76/Banner2.jpeg"
-
   return (
     <div className="flex flex-col items-center justify-center">
       <Helmet title={title} defaultTitle="Tulia Wine" defer={false}>
         <meta name="description" content={description} />
       </Helmet>
-      <div className="flex justify-center text-4xl py-4 items-center bg-secondary shadow w-full">
+      {/*       <div className="flex justify-center text-4xl py-4 items-center bg-secondary shadow w-full">
         <div className="container mx-auto text-white">
           <div className="max-w-xl mx-auto text-center">
             <h1 className={`font-light text-white text-3xl mb-2`}>{title}</h1>
@@ -27,12 +24,29 @@ const PageHeader: React.FC<Props> = ({ title, description, image, banner }) => {
             </p>
           </div>
         </div>
-      </div>
-      <div className="w-fullbg-secondary items-center">
+      </div> */}
+      <div className="w-full  items-center">
         {image ? (
-          <GatsbyImage alt={title} objectFit="contain" image={image} />
+          <GatsbyImage
+            style={{
+              maxHeight: 480,
+            }}
+            objectPosition="5% left"
+            objectFit="cover"
+            alt={title}
+            image={image}
+          />
         ) : (
-          <img src={banner || defaultBanner} alt={title} />
+          <img
+            src={banner}
+            style={{
+              maxHeight: 480,
+              objectPosition: "top left",
+              objectFit: "cover",
+            }}
+            className="w-full"
+            title={title}
+          />
         )}
       </div>
     </div>

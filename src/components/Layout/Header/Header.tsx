@@ -58,7 +58,7 @@ const Header: React.FC<Props> = ({ headerNavData }) => {
           </button>
           {headerNavData?.navigationItems?.map(item => (
             <Link
-              key={item.contentfulId}
+              key={item.contentful_id}
               activeClassName="text-secondary"
               className="flex items-center justify-center py-2 sm:px-4 sm:py-0"
               to={`${item?.mainLink?.linkUrl}`}

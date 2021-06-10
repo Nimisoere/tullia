@@ -86,7 +86,11 @@ const Blog: React.FC<Props> = ({ data }) => {
       footerNavData={data.footer}
       socialMediaMavData={data.socialMedia}
     >
-      <PageHeader title={data?.contentfulDataBlogPosts?.title} />
+      <PageHeader
+        title={data?.contentfulDataBlogPosts?.title}
+        description={data?.contentfulDataBlogPosts?.summary?.summary}
+        banner="https://images.ctfassets.net/aj2hdpos2uzm/37VYKAU6DrCkSnEF6mxzrI/d54c9c9f79df40dddabf773a5eed8e76/Banner2.jpeg"
+      />
       <div className="w-full bg-gray-100">
         <div className="container mx-auto py-4">
           <Link to="/blog" className="flex items-center">

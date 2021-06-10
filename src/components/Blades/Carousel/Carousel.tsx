@@ -56,7 +56,7 @@ const Carousel: React.FC<Props> = ({ blade }) => {
 
   const Slides = blade.slides?.map((slide: any, index: number) => (
     <div
-      key={slide.contentfulId}
+      key={slide.contentful_id}
       className={`${
         !blade.useSlider && `w-full sm:w-1/${blade.itemsPerRow} mb-10 sm:mb-0`
       }`}
@@ -68,7 +68,7 @@ const Carousel: React.FC<Props> = ({ blade }) => {
       ) : slide.__typename === "ContentfulBladeFeature" ? (
         <Feature blade={slide} />
       ) : (
-        <React.Fragment key={slide.contentfulId}></React.Fragment>
+        <React.Fragment key={slide.contentful_id}></React.Fragment>
       )}
     </div>
   ))

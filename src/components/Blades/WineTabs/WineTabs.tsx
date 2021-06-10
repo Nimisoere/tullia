@@ -45,7 +45,7 @@ const WineTabs: React.FC<Props> = props => {
                     image={edge?.node?.thumbnail?.constrainedGatsbyImage}
                   />
 
-                  <span className="ml-4 font-serif">
+                  <span className="ml-4 w-full text-center font-serif">
                     {edge?.node?.wineName}
                   </span>
                 </Link>

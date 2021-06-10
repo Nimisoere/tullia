@@ -47,7 +47,7 @@ const Accordion: React.FC<Props> = ({ blade }) => {
         <div className="">{renderRichText(blade.content, options)}</div>
       )}
       {blade.accordions?.map(accordion => (
-        <ElementAccordion accordion={accordion} key={blade.contentfulId} />
+        <ElementAccordion accordion={accordion} key={blade.contentful_id} />
       ))}
     </div>
   )

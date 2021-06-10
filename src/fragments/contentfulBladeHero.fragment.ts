@@ -10,6 +10,7 @@ export const heroFragment = graphql`
       raw
     }
     caption
+    imageOnly
     backgroundImage {
       ...assetFragment
     }

@@ -13,15 +13,15 @@ const HomeNavigation = ({ blade }) => {
       <div className="container mx-auto flex flex-wrap">
         {blade?.navigationItems?.map(item => (
           <Link
-            key={item.contentfulId}
+            key={item.contentful_id}
             to={`${item?.mainLink?.linkUrl}`}
             className="w-full group sm:w-1/3 p-4"
           >
             <div className="flex flex-col shadow group bg-white relative">
               <div className="absolute top-0 left-0 transition-all transform items-center  justify-center ease-in duration-500 group-hover:flex z-10 hidden w-full h-full bg-white bg-opacity-50">
-                <div className="bg-secondary hover:bg-primary text-white  py-3 px-8 flex justify-between items-center text-lg">
+                <div className="bg-secondary group hover:bg-primary transform text-white  py-3 px-8 flex justify-between items-center text-lg">
                   Explore
-                  <BsArrowRight className="ml-4 hover:translate-x-1 transition-all transform" />
+                  <BsArrowRight className="ml-4 group-hover:translate-x-2 transition-all transform" />
                 </div>
               </div>
               <div className="w-full flex justify-center h-56 bg-white">

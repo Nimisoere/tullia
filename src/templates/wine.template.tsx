@@ -46,7 +46,11 @@ const Wine: React.FC<Props> = ({ data }) => {
       footerNavData={data.footer}
       socialMediaMavData={data.socialMedia}
     >
-      <PageHeader title={wineData.wineName} />
+      <PageHeader
+        title={wineData.wineName}
+        description={wineData.wineCategory}
+        banner="https://images.ctfassets.net/aj2hdpos2uzm/37VYKAU6DrCkSnEF6mxzrI/d54c9c9f79df40dddabf773a5eed8e76/Banner2.jpeg"
+      />
       <WineTabs />
       <WineDisplay wine={wineData} />
       {!!wineData?.gallery?.length && (
@@ -58,7 +62,7 @@ const Wine: React.FC<Props> = ({ data }) => {
             <div className="flex flex-wrap border-4 border-secondary max-w-4xl mx-auto p-2">
               {wineData?.gallery?.map(item => {
                 return (
-                  <div className="w-full sm:w-1/3 p-2">
+                  <div key={item.contentful_id} className="w-full sm:w-1/3 p-2">
                     <GatsbyImage
                       image={item?.constrainedGatsbyImage}
                       alt={item.description}

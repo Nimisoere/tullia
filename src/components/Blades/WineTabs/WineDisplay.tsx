@@ -13,18 +13,18 @@ const WineDisplay: React.FC<Props> = ({ wine }) => {
   return (
     <div className="w-full">
       <div className="container flex flex-wrap mx-auto py-20">
-        <div className="w-full mb-10 sm:mb-0 sm:w-1/3 flex justify-center sm:justify-end items-center">
+        <div className="w-full mb-10 sm:mb-0 md:w-1/5 flex justify-center sm:justify-end items-center">
           <GatsbyImage
             style={{
-              height: 300,
+              height: 450,
             }}
             objectFit="contain"
             alt={wine?.wineName}
             image={wine?.image?.constrainedGatsbyImage}
           />
         </div>
-        <div className="sm:px-10 w-full sm:w-2/3">
-          <div className="w-full max-w-lg shadow bg-secondary p-8">
+        <div className="sm:px-10 w-full md:w-4/5">
+          <div className="w-full max-w-lg shadow h-full flex flex-col justify-center bg-secondary p-8">
             <h4 className="font-light font-serif capitalize mb-4 flex items-center text-3xl">
               {wine?.wineName}{" "}
             </h4>

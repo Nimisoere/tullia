@@ -46,7 +46,7 @@ const Blog: React.FC<Props> = ({ data }) => {
       <PageHeader
         title="Blog Posts"
         description="What we have to say"
-        banner="https://images.ctfassets.net/aj2hdpos2uzm/37VYKAU6DrCkSnEF6mxzrI/d54c9c9f79df40dddabf773a5eed8e76/Banner2.jpeg"
+        banner="https://images.ctfassets.net/aj2hdpos2uzm/55euJ4f7xr5XgVWhvYbOMj/2cc70239dbc96b25a4ce219cead07f5b/shutterstock_760350316.jpeg"
       />
       <div className="container flex flex-wrap mx-auto py-20">
         <div className="w-full mx-auto max-w-3xl flex flex-col flex-wrap mb-10">

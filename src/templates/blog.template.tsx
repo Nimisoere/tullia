@@ -89,7 +89,7 @@ const Blog: React.FC<Props> = ({ data }) => {
       <PageHeader
         title={data?.contentfulDataBlogPosts?.title}
         description={data?.contentfulDataBlogPosts?.summary?.summary}
-        banner="https://images.ctfassets.net/aj2hdpos2uzm/37VYKAU6DrCkSnEF6mxzrI/d54c9c9f79df40dddabf773a5eed8e76/Banner2.jpeg"
+        banner="https://images.ctfassets.net/aj2hdpos2uzm/55euJ4f7xr5XgVWhvYbOMj/2cc70239dbc96b25a4ce219cead07f5b/shutterstock_760350316.jpeg"
       />
       <div className="w-full bg-gray-100">
         <div className="container mx-auto py-4">

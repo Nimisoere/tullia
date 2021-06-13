@@ -1,3 +1,4 @@
+import { Link } from "gatsby"
 import { navigate } from "gatsby-link"
 import React from "react"
 
@@ -42,8 +43,8 @@ const ContactForm: React.FC<Props> = ({ blade }) => {
 
   return (
     <div className="w-full bg-gray-100 py-14">
-      <div className="container max-w-3xl mx-auto">
-        {submitted && (
+      <div className="container max-w-3xl mx-auto flex justify-center items-center">
+        {/*         {submitted && (
           <div className="bg-green-100 p-4 text-green-700 mb-4">
             Form submitted successfully
           </div>
@@ -119,6 +120,14 @@ const ContactForm: React.FC<Props> = ({ blade }) => {
             </button>
           </div>
         </form>
+       */}
+        <a
+          className={`bg-${blade?.primaryCta?.buttonStyle?.toLowerCase()} w-full max-w-xs  text-xl leading-none hover:bg-secondary text-white py-6 flex items-center justify-center`}
+          href="mailto:contact@tuliawine.com"
+          aria-label="send message"
+        >
+          Send us a Mail
+        </a>
       </div>
     </div>
   )

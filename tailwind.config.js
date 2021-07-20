@@ -7,7 +7,7 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        sans: ['Times-LT', 'sans-serif'],
+        sans: ['Open Sans', 'sans-serif'],
         serif: ['Bodoni Moda', 'sans-serif'],
       },
 

@@ -30,7 +30,7 @@ const HomeNavigation = ({ blade }) => {
                   image={item.navigationImage.constrainedGatsbyImage}
                 />
               </div>
-              <span className="p-4 text-center text-2xl text-secondary">
+              <span className="p-4 font-serif text-center text-2xl text-secondary">
                 {item?.title}
               </span>
             </div>

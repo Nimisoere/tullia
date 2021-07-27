@@ -21,7 +21,7 @@ const Footer: React.FC<Props> = ({ footerNavData, socialMediaMavData }) => {
         <div className="mb-10 flex flex-col items-center w-full justify-center">
           <div className="bg-white p-4 mb-4">
             <StaticImage
-              src="../../../images/logo.png"
+              src="../../../images/logo.jpeg"
               alt="Tulia"
               layout="constrained"
               height={40}

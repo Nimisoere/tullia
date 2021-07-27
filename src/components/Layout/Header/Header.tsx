@@ -20,7 +20,7 @@ const Header: React.FC<Props> = ({ headerNavData }) => {
           className="flex bg-white sm:px-4 items-center justify-center"
         >
           <StaticImage
-            src="../../../images/logo.png"
+            src="../../../images/logo.jpeg"
             alt="Tulia"
             layout="constrained"
             height={60}
